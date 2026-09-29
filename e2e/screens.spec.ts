@@ -76,6 +76,15 @@ for (const v of VIEWPORTS) {
       };
       expect(await fitProblems(page), 'title').toEqual([]);
       await legible('title');
+      // R-TITLE-1: the credit line sits inside the title card, below its buttons.
+      const credit = page.locator('.title-screen .card .title-credit');
+      await expect(credit).toHaveText('Idea by MrSimmo, cemented by Claude and pals');
+      await expect(credit).toBeVisible();
+      const [creditTop, buttonsBottom] = await page.evaluate(() => [
+        document.querySelector('.title-credit')!.getBoundingClientRect().top,
+        document.querySelector('.title-actions')!.getBoundingClientRect().bottom,
+      ]);
+      expect(creditTop, 'credit below the buttons').toBeGreaterThanOrEqual(buttonsBottom);
       await page.getByRole('button', { name: 'Settings' }).click();
       for (const tab of ['Sound', 'Display', 'Controls']) {
         await page.getByRole('tab', { name: tab }).click();

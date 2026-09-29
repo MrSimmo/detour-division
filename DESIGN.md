@@ -1034,7 +1034,7 @@ The layout is recomputed on resize, on orientation change, and when `visualViewp
 ### 18.3 Screens
 
 1. Boot splash ("Tap to start", audio unlock)
-2. Title menu: Play, Field Guide, Settings, Saves, Credits
+2. Title menu: Play, Field Guide, Settings, Saves, Credits. A credit line runs along the foot of the title card: "Idea by MrSimmo, cemented by Claude and pals", in the UI font at the small size (14) in `--ink-soft`, above a `--parchment-deep` rule. It is inside the card, so the dialog fit (§18.2 item 7) and the legibility floor (§16.4) cover it.
 3. World map
 4. Level briefing: difficulty, mode rules, loadout, Endless when unlocked, hints
 5. In-level: HUD, build bar, tower panel, pause menu
@@ -1044,6 +1044,8 @@ The layout is recomputed on resize, on orientation change, and when `visualViewp
 9. Saves: export and import
 10. Credits
 11. Overlays: rotate prompt, iOS Add to Home Screen explainer, "Update ready" badge (menus only), resume prompt
+
+- **R-TITLE-1**: At every screenshot viewport the title menu shows the credit line "Idea by MrSimmo, cemented by Claude and pals" inside the title card, below its buttons, and the title still passes R-LAYOUT-3 and, on touch devices, V-8 (Playwright).
 
 ### 18.4 HUD and panels
 

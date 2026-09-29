@@ -394,6 +394,8 @@ export function titleScreen(on: { play(): void; guide(): void; settings(): void;
           h('button', { class: 'btn', type: 'button', onclick: on.saves }, 'Saves'),
         ),
       ),
+      // R-TITLE-1: inside the card, so the dialog fit and the legibility floor cover it.
+      h('footer', { class: 'title-credit' }, 'Idea by MrSimmo, cemented by Claude and pals'),
     ),
   );
 }
