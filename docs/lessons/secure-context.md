@@ -1,0 +1,6 @@
+The dev server's LAN address (`http://192.168.…:5173`) is not a secure context, so on a phone or another machine the page has no WebGPU and no service worker; `localhost` is secure.
+
+- Browsers expose `navigator.gpu` only in a secure context (https, or localhost). Measured 2026-09-28: Chromium, WebKit and a second Chromium-based browser all report `'gpu' in navigator` true on `http://localhost:5173` and false on the LAN address (`http://192.168.x.x:5173`). A greyed-out WebGPU option on a device reached over the LAN is expected, not a detection bug (R-GPU-1). The service worker needs a secure context too, so offline play can't be checked that way either.
+- To use WebGPU or the service worker on a phone, the page has to come over https: a dev certificate the phone trusts (for example `@vitejs/plugin-basic-ssl`, which isn't installed, plus trusting its certificate on iOS), or a deployed https build. In the iOS Simulator, `localhost` works (`ios-simulator.md`).
+- To test the insecure path in Playwright, an init script sets `isSecureContext` to false and deletes `Navigator.prototype.gpu` (`e2e/tooltips.spec.ts`).
+- A `disabled` button gets no touch events, so its tooltip can't show on a long press. Controls whose tooltip explains why they're off use `aria-disabled` and ignore the click (settings choices, map medallions).

@@ -1,0 +1,365 @@
+{
+ "sfx.tower.rattler.t1": {
+  "synth": "tower.rattler.t1"
+ },
+ "sfx.tower.rattler.t2": {
+  "synth": "tower.rattler.t2"
+ },
+ "sfx.tower.rattler.t3": {
+  "synth": "tower.rattler.t3"
+ },
+ "sfx.tower.treacle.t1": {
+  "synth": "tower.treacle.t1"
+ },
+ "sfx.tower.treacle.t2": {
+  "synth": "tower.treacle.t2"
+ },
+ "sfx.tower.treacle.t3": {
+  "synth": "tower.treacle.t3"
+ },
+ "sfx.tower.skylark.t1": {
+  "synth": "tower.skylark.t1"
+ },
+ "sfx.tower.skylark.t2": {
+  "synth": "tower.skylark.t2"
+ },
+ "sfx.tower.skylark.t3": {
+  "synth": "tower.skylark.t3"
+ },
+ "sfx.tower.thumper.t1": {
+  "synth": "tower.thumper.t1"
+ },
+ "sfx.tower.thumper.t2": {
+  "synth": "tower.thumper.t2"
+ },
+ "sfx.tower.thumper.t3": {
+  "synth": "tower.thumper.t3"
+ },
+ "sfx.tower.scorcher.t1": {
+  "synth": "tower.scorcher.t1"
+ },
+ "sfx.tower.scorcher.t2": {
+  "synth": "tower.scorcher.t2"
+ },
+ "sfx.tower.scorcher.t3": {
+  "synth": "tower.scorcher.t3"
+ },
+ "sfx.tower.sparkplug.t1": {
+  "synth": "tower.sparkplug.t1"
+ },
+ "sfx.tower.sparkplug.t2": {
+  "synth": "tower.sparkplug.t2"
+ },
+ "sfx.tower.sparkplug.t3": {
+  "synth": "tower.sparkplug.t3"
+ },
+ "sfx.tower.sunbeam.t1": {
+  "synth": "tower.sunbeam.t1"
+ },
+ "sfx.tower.sunbeam.t2": {
+  "synth": "tower.sunbeam.t2"
+ },
+ "sfx.tower.sunbeam.t3": {
+  "synth": "tower.sunbeam.t3"
+ },
+ "sfx.tower.icebox.t1": {
+  "synth": "tower.icebox.t1"
+ },
+ "sfx.tower.icebox.t2": {
+  "synth": "tower.icebox.t2"
+ },
+ "sfx.tower.icebox.t3": {
+  "synth": "tower.icebox.t3"
+ },
+ "sfx.tower.teaurn.t1": {
+  "synth": "tower.teaurn.t1"
+ },
+ "sfx.tower.teaurn.t2": {
+  "synth": "tower.teaurn.t2"
+ },
+ "sfx.tower.teaurn.t3": {
+  "synth": "tower.teaurn.t3"
+ },
+ "sfx.tower.bellower.t1": {
+  "synth": "tower.bellower.t1"
+ },
+ "sfx.tower.bellower.t2": {
+  "synth": "tower.bellower.t2"
+ },
+ "sfx.tower.bellower.t3": {
+  "synth": "tower.bellower.t3"
+ },
+ "sfx.tower.bubbler.t1": {
+  "synth": "tower.bubbler.t1"
+ },
+ "sfx.tower.bubbler.t2": {
+  "synth": "tower.bubbler.t2"
+ },
+ "sfx.tower.bubbler.t3": {
+  "synth": "tower.bubbler.t3"
+ },
+ "sfx.tower.piechucker.t1": {
+  "synth": "tower.piechucker.t1"
+ },
+ "sfx.tower.piechucker.t2": {
+  "synth": "tower.piechucker.t2"
+ },
+ "sfx.tower.piechucker.t3": {
+  "synth": "tower.piechucker.t3"
+ },
+ "sfx.boom.thumper": {
+  "synth": "boom.thumper"
+ },
+ "sfx.boom.piechucker": {
+  "synth": "boom.piechucker"
+ },
+ "sfx.boom.skylark": {
+  "synth": "boom.skylark"
+ },
+ "sfx.boom.small": {
+  "synth": "boom.small"
+ },
+ "sfx.enemy.pop": {
+  "synth": "enemy.pop"
+ },
+ "sfx.enemy.clank": {
+  "synth": "enemy.clank"
+ },
+ "sfx.enemy.air": {
+  "synth": "enemy.air"
+ },
+ "sfx.enemy.leak": {
+  "synth": "enemy.leak"
+ },
+ "sfx.enemy.shieldbreak": {
+  "synth": "enemy.shieldbreak"
+ },
+ "sfx.enemy.shieldup": {
+  "synth": "enemy.shieldup"
+ },
+ "sfx.enemy.heal": {
+  "synth": "enemy.heal"
+ },
+ "sfx.enemy.split": {
+  "synth": "enemy.split"
+ },
+ "sfx.enemy.tunnel": {
+  "synth": "enemy.tunnel"
+ },
+ "sfx.status.freeze": {
+  "synth": "status.freeze"
+ },
+ "sfx.status.pop": {
+  "synth": "status.pop"
+ },
+ "sfx.status.reverse": {
+  "synth": "status.reverse"
+ },
+ "sfx.boss.arrive": {
+  "synth": "boss.arrive"
+ },
+ "sfx.boss.phase": {
+  "synth": "boss.phase"
+ },
+ "sfx.boss.drop": {
+  "synth": "boss.drop"
+ },
+ "sfx.boss.death": {
+  "synth": "boss.death"
+ },
+ "sfx.ui.click": {
+  "synth": "ui.click"
+ },
+ "sfx.ui.select": {
+  "synth": "ui.select"
+ },
+ "sfx.ui.build": {
+  "synth": "ui.build"
+ },
+ "sfx.ui.upgrade": {
+  "synth": "ui.upgrade"
+ },
+ "sfx.ui.sell": {
+  "synth": "ui.sell"
+ },
+ "sfx.ui.error": {
+  "synth": "ui.error"
+ },
+ "sfx.ui.clear": {
+  "synth": "ui.clear"
+ },
+ "sfx.ui.coins": {
+  "synth": "ui.coins"
+ },
+ "sfx.ui.wave": {
+  "synth": "ui.wave"
+ },
+ "sfx.amb.z1": {
+  "synth": "amb.z1"
+ },
+ "sfx.amb.z2": {
+  "synth": "amb.z2"
+ },
+ "sfx.amb.z3": {
+  "synth": "amb.z3"
+ },
+ "sfx.amb.z4": {
+  "synth": "amb.z4"
+ },
+ "sfx.amb.z5": {
+  "synth": "amb.z5"
+ },
+ "music.menu.L0": {
+  "synth": "menu.L0"
+ },
+ "music.menu.L1": {
+  "synth": "menu.L1"
+ },
+ "music.menu.L2": {
+  "synth": "menu.L2"
+ },
+ "music.menu.L3": {
+  "synth": "menu.L3"
+ },
+ "music.z1.L0": {
+  "synth": "z1.L0"
+ },
+ "music.z1.L1": {
+  "synth": "z1.L1"
+ },
+ "music.z1.L2": {
+  "synth": "z1.L2"
+ },
+ "music.z1.L3": {
+  "synth": "z1.L3"
+ },
+ "music.boss.z1.L0": {
+  "synth": "boss.z1.L0"
+ },
+ "music.boss.z1.L1": {
+  "synth": "boss.z1.L1"
+ },
+ "music.boss.z1.L2": {
+  "synth": "boss.z1.L2"
+ },
+ "music.boss.z1.L3": {
+  "synth": "boss.z1.L3"
+ },
+ "music.z2.L0": {
+  "synth": "z2.L0"
+ },
+ "music.z2.L1": {
+  "synth": "z2.L1"
+ },
+ "music.z2.L2": {
+  "synth": "z2.L2"
+ },
+ "music.z2.L3": {
+  "synth": "z2.L3"
+ },
+ "music.boss.z2.L0": {
+  "synth": "boss.z2.L0"
+ },
+ "music.boss.z2.L1": {
+  "synth": "boss.z2.L1"
+ },
+ "music.boss.z2.L2": {
+  "synth": "boss.z2.L2"
+ },
+ "music.boss.z2.L3": {
+  "synth": "boss.z2.L3"
+ },
+ "music.z3.L0": {
+  "synth": "z3.L0"
+ },
+ "music.z3.L1": {
+  "synth": "z3.L1"
+ },
+ "music.z3.L2": {
+  "synth": "z3.L2"
+ },
+ "music.z3.L3": {
+  "synth": "z3.L3"
+ },
+ "music.boss.z3.L0": {
+  "synth": "boss.z3.L0"
+ },
+ "music.boss.z3.L1": {
+  "synth": "boss.z3.L1"
+ },
+ "music.boss.z3.L2": {
+  "synth": "boss.z3.L2"
+ },
+ "music.boss.z3.L3": {
+  "synth": "boss.z3.L3"
+ },
+ "music.z4.L0": {
+  "synth": "z4.L0"
+ },
+ "music.z4.L1": {
+  "synth": "z4.L1"
+ },
+ "music.z4.L2": {
+  "synth": "z4.L2"
+ },
+ "music.z4.L3": {
+  "synth": "z4.L3"
+ },
+ "music.boss.z4.L0": {
+  "synth": "boss.z4.L0"
+ },
+ "music.boss.z4.L1": {
+  "synth": "boss.z4.L1"
+ },
+ "music.boss.z4.L2": {
+  "synth": "boss.z4.L2"
+ },
+ "music.boss.z4.L3": {
+  "synth": "boss.z4.L3"
+ },
+ "music.z5.L0": {
+  "synth": "z5.L0"
+ },
+ "music.z5.L1": {
+  "synth": "z5.L1"
+ },
+ "music.z5.L2": {
+  "synth": "z5.L2"
+ },
+ "music.z5.L3": {
+  "synth": "z5.L3"
+ },
+ "music.boss.z5.L0": {
+  "synth": "boss.z5.L0"
+ },
+ "music.boss.z5.L1": {
+  "synth": "boss.z5.L1"
+ },
+ "music.boss.z5.L2": {
+  "synth": "boss.z5.L2"
+ },
+ "music.boss.z5.L3": {
+  "synth": "boss.z5.L3"
+ },
+ "stinger.wave": {
+  "synth": "wave"
+ },
+ "stinger.bossArrive": {
+  "synth": "bossArrive"
+ },
+ "stinger.victory": {
+  "synth": "victory"
+ },
+ "stinger.defeat": {
+  "synth": "defeat"
+ },
+ "stinger.star1": {
+  "synth": "star1"
+ },
+ "stinger.star2": {
+  "synth": "star2"
+ },
+ "stinger.star3": {
+  "synth": "star3"
+ }
+}

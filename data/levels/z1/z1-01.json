@@ -1,0 +1,93 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z1-01",
+ "zone": 1,
+ "index": 1,
+ "name": "Primrose Lane",
+ "mode": "standard",
+ "seed": 101,
+ "grid": {
+  "cols": 20,
+  "rows": 12
+ },
+ "tiles": [
+  "....................",
+  "....................",
+  "...##...............",
+  "....#.........##....",
+  "....................",
+  "....................",
+  "....................",
+  "....................",
+  "..........#.........",
+  "....................",
+  "...##..........##...",
+  "...................."
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 120,
+ "loadout": {
+  "bot": [
+   "rattler"
+  ]
+ },
+ "waves": {
+  "count": [
+   20,
+   25,
+   30
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 5,
+   "g": 1.0836,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 1
+    }
+   ],
+   "hp": 1.652
+  },
+  "overrides": [
+   {
+    "wave": 1,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 5
+     }
+    ]
+   },
+   {
+    "wave": 2,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 7
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "Towers can go anywhere, and the army walks round them. Build a winding lane and make them walk the long way round."
+ ]
+}

@@ -1,0 +1,691 @@
+{
+ "title": "Detour Division level",
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "type": "object",
+ "properties": {
+  "$schema": {
+   "type": "string"
+  },
+  "id": {
+   "type": "string",
+   "pattern": "^z[1-5]-0[1-8]$"
+  },
+  "zone": {
+   "type": "integer",
+   "minimum": 1,
+   "maximum": 5
+  },
+  "index": {
+   "type": "integer",
+   "minimum": 1,
+   "maximum": 8
+  },
+  "name": {
+   "type": "string"
+  },
+  "mode": {
+   "type": "string",
+   "enum": [
+    "standard",
+    "suddenDeath",
+    "timeTrial",
+    "puzzle"
+   ]
+  },
+  "modeParams": {
+   "default": {},
+   "type": "object",
+   "properties": {
+    "timer": {
+     "type": "array",
+     "prefixItems": [
+      {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      {
+       "type": "number",
+       "exclusiveMinimum": 0
+      }
+     ],
+     "items": false,
+     "minItems": 3,
+     "maxItems": 3
+    },
+    "target": {
+     "type": "array",
+     "prefixItems": [
+      {
+       "type": "integer",
+       "exclusiveMinimum": 0,
+       "maximum": 9007199254740991
+      },
+      {
+       "type": "integer",
+       "exclusiveMinimum": 0,
+       "maximum": 9007199254740991
+      },
+      {
+       "type": "integer",
+       "exclusiveMinimum": 0,
+       "maximum": 9007199254740991
+      }
+     ],
+     "items": false,
+     "minItems": 3,
+     "maxItems": 3
+    }
+   },
+   "additionalProperties": false
+  },
+  "seed": {
+   "type": "integer",
+   "minimum": -9007199254740991,
+   "maximum": 9007199254740991
+  },
+  "grid": {
+   "type": "object",
+   "properties": {
+    "cols": {
+     "type": "integer",
+     "minimum": 6,
+     "maximum": 32
+    },
+    "rows": {
+     "type": "integer",
+     "minimum": 4,
+     "maximum": 20
+    }
+   },
+   "required": [
+    "cols",
+    "rows"
+   ],
+   "additionalProperties": false
+  },
+  "tiles": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "routes": {
+   "minItems": 1,
+   "maxItems": 4,
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "entrance": {
+      "type": "object",
+      "properties": {
+       "edge": {
+        "type": "string",
+        "enum": [
+         "N",
+         "S",
+         "E",
+         "W"
+        ]
+       },
+       "from": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "to": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       }
+      },
+      "required": [
+       "edge",
+       "from",
+       "to"
+      ],
+      "additionalProperties": false
+     },
+     "exit": {
+      "type": "object",
+      "properties": {
+       "edge": {
+        "type": "string",
+        "enum": [
+         "N",
+         "S",
+         "E",
+         "W"
+        ]
+       },
+       "from": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "to": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       }
+      },
+      "required": [
+       "edge",
+       "from",
+       "to"
+      ],
+      "additionalProperties": false
+     },
+     "airOnly": {
+      "default": false,
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "id",
+     "entrance",
+     "exit"
+    ],
+    "additionalProperties": false
+   }
+  },
+  "tunnels": {
+   "default": [],
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": "array",
+      "prefixItems": [
+       {
+        "type": "integer",
+        "minimum": -9007199254740991,
+        "maximum": 9007199254740991
+       },
+       {
+        "type": "integer",
+        "minimum": -9007199254740991,
+        "maximum": 9007199254740991
+       }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+     },
+     "b": {
+      "type": "array",
+      "prefixItems": [
+       {
+        "type": "integer",
+        "minimum": -9007199254740991,
+        "maximum": 9007199254740991
+       },
+       {
+        "type": "integer",
+        "minimum": -9007199254740991,
+        "maximum": 9007199254740991
+       }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+     },
+     "length": {
+      "type": "number",
+      "exclusiveMinimum": 0
+     }
+    },
+    "required": [
+     "a",
+     "b",
+     "length"
+    ],
+    "additionalProperties": false
+   }
+  },
+  "blockers": {
+   "default": {
+    "clearCost": 20
+   },
+   "type": "object",
+   "properties": {
+    "clearCost": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 9007199254740991
+    }
+   },
+   "required": [
+    "clearCost"
+   ],
+   "additionalProperties": false
+  },
+  "lives": {
+   "type": "integer",
+   "exclusiveMinimum": 0,
+   "maximum": 9007199254740991
+  },
+  "startCash": {
+   "type": "integer",
+   "minimum": 0,
+   "maximum": 9007199254740991
+  },
+  "loadout": {
+   "type": "object",
+   "properties": {
+    "fixed": {
+     "default": null,
+     "anyOf": [
+      {
+       "maxItems": 6,
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "bot": {
+     "minItems": 1,
+     "maxItems": 6,
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "required": [
+    "bot"
+   ],
+   "additionalProperties": false
+  },
+  "waves": {
+   "type": "object",
+   "properties": {
+    "count": {
+     "type": "array",
+     "prefixItems": [
+      {
+       "type": "integer",
+       "exclusiveMinimum": 0,
+       "maximum": 9007199254740991
+      },
+      {
+       "type": "integer",
+       "exclusiveMinimum": 0,
+       "maximum": 9007199254740991
+      },
+      {
+       "type": "integer",
+       "exclusiveMinimum": 0,
+       "maximum": 9007199254740991
+      }
+     ],
+     "items": false,
+     "minItems": 3,
+     "maxItems": 3
+    },
+    "interval": {
+     "type": "number",
+     "exclusiveMinimum": 0
+    },
+    "intervalEnd": {
+     "type": "number",
+     "exclusiveMinimum": 0
+    },
+    "recipe": {
+     "type": "object",
+     "properties": {
+      "b0": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "g": {
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "hp": {
+       "default": 1,
+       "type": "number",
+       "exclusiveMinimum": 0
+      },
+      "pool": {
+       "minItems": 1,
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "enemy": {
+          "type": "string"
+         },
+         "from": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+         },
+         "to": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+         },
+         "weight": {
+          "type": "number",
+          "exclusiveMinimum": 0
+         }
+        },
+        "required": [
+         "enemy",
+         "from",
+         "weight"
+        ],
+        "additionalProperties": false
+       }
+      },
+      "airEvery": {
+       "default": 0,
+       "type": "integer",
+       "minimum": 0,
+       "maximum": 9007199254740991
+      },
+      "eliteFrom": {
+       "default": 0,
+       "type": "integer",
+       "minimum": 0,
+       "maximum": 9007199254740991
+      },
+      "eliteEvery": {
+       "default": 0,
+       "type": "integer",
+       "minimum": 0,
+       "maximum": 9007199254740991
+      },
+      "eliteShareMax": {
+       "default": 0.35,
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      },
+      "breathers": {
+       "default": [],
+       "type": "array",
+       "items": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 9007199254740991
+       }
+      }
+     },
+     "required": [
+      "b0",
+      "g",
+      "pool"
+     ],
+     "additionalProperties": false
+    },
+    "overrides": {
+     "default": [],
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "wave": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 9007199254740991
+       },
+       "groups": {
+        "minItems": 1,
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "enemy": {
+           "type": "string"
+          },
+          "count": {
+           "type": "integer",
+           "exclusiveMinimum": 0,
+           "maximum": 9007199254740991
+          },
+          "elite": {
+           "default": false,
+           "type": "boolean"
+          },
+          "route": {
+           "type": "string"
+          },
+          "spacing": {
+           "type": "number",
+           "exclusiveMinimum": 0
+          },
+          "delay": {
+           "default": 0,
+           "type": "number",
+           "minimum": 0
+          }
+         },
+         "required": [
+          "enemy",
+          "count"
+         ],
+         "additionalProperties": false
+        }
+       },
+       "difficulties": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "enum": [
+          "casual",
+          "tough",
+          "heroic"
+         ]
+        }
+       }
+      },
+      "required": [
+       "wave",
+       "groups"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   "required": [
+    "count",
+    "interval",
+    "recipe"
+   ],
+   "additionalProperties": false
+  },
+  "hints": {
+   "default": [],
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "bot": {
+   "default": {
+    "plan": null,
+    "generic": true
+   },
+   "type": "object",
+   "properties": {
+    "plan": {
+     "default": null,
+     "anyOf": [
+      {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "wave": {
+          "default": 0,
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+         },
+         "build": {
+          "type": "object",
+          "properties": {
+           "tower": {
+            "type": "string"
+           },
+           "cx": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+           },
+           "cy": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+           }
+          },
+          "required": [
+           "tower",
+           "cx",
+           "cy"
+          ],
+          "additionalProperties": false
+         },
+         "upgrade": {
+          "type": "object",
+          "properties": {
+           "cx": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+           },
+           "cy": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+           }
+          },
+          "required": [
+           "cx",
+           "cy"
+          ],
+          "additionalProperties": false
+         },
+         "sell": {
+          "type": "object",
+          "properties": {
+           "cx": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+           },
+           "cy": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+           }
+          },
+          "required": [
+           "cx",
+           "cy"
+          ],
+          "additionalProperties": false
+         },
+         "clear": {
+          "type": "object",
+          "properties": {
+           "cx": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+           },
+           "cy": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+           }
+          },
+          "required": [
+           "cx",
+           "cy"
+          ],
+          "additionalProperties": false
+         },
+         "target": {
+          "type": "object",
+          "properties": {
+           "cx": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+           },
+           "cy": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+           },
+           "mode": {
+            "type": "string",
+            "enum": [
+             "first",
+             "last",
+             "strongest",
+             "closest"
+            ]
+           }
+          },
+          "required": [
+           "cx",
+           "cy",
+           "mode"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "generic": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "night": {
+   "default": false,
+   "type": "boolean"
+  }
+ },
+ "required": [
+  "id",
+  "zone",
+  "index",
+  "name",
+  "mode",
+  "seed",
+  "grid",
+  "tiles",
+  "routes",
+  "lives",
+  "startCash",
+  "loadout",
+  "waves"
+ ],
+ "additionalProperties": false
+}

@@ -1,0 +1,54 @@
+/* Design tokens (DESIGN.md §16.3–16.6). The only file where UI colour literals live (V-1). */
+:root {
+  --ink: #2b1d14;
+  --ink-soft: #5a4332;
+  --parchment: #f6e7c1;
+  --parchment-shade: #e6cf98;
+  --parchment-deep: #cdae6e;
+  --wood: #9a6431;
+  --wood-dark: #5e3a1a;
+  --brass: #e3a92b;
+  --brass-light: #ffe08a;
+  --brass-dark: #a8700f;
+  --go: #5e9a2e;
+  --go-light: #92cf55;
+  --go-dark: #3a6419;
+  --stop: #d5452f;
+  --stop-light: #f47e62;
+  --stop-dark: #8e2415;
+  --info: #2f9bd6;
+  --info-light: #7ccbf2;
+  --info-dark: #1b6592;
+  --warn: #f2932b;
+  --text-on-dark: #fff6e0;
+  --shadow: rgba(43, 29, 20, 0.35);
+  --shade-deep: rgba(43, 29, 20, 0.62);
+  --hi: rgba(255, 248, 236, 0.45);
+  --hi-soft: rgba(255, 248, 236, 0.18);
+  --cb-ok: #0072b2;
+  --cb-bad: #e69f00;
+
+  --font-display: 'Lilita One', sans-serif;
+  --font-ui: 'Fredoka', sans-serif;
+
+  /* Everything is sized in --u: 1 CSS px × the HUD scale (§18.2). */
+  --ui-scale: 1;
+  --u: calc(var(--ui-scale) * 1px);
+  --lip: calc(5 * var(--u));
+  --line: calc(3 * var(--u));
+  /* V-2: the minimum target. 44 px, less only in a desktop window smaller than 1366×768 (src/app/fit.ts). */
+  --tap: 44px;
+
+  --t-press: 70ms;
+  --t-quick: 140ms;
+  --t-pop: 220ms;
+  --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --t-panel: 240ms;
+  --ease-panel: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Reduced motion (§16.6): the OS setting or the in-game one; src/app/settings.ts sets the attribute. */
+:root[data-motion='reduced'] {
+  --ease-pop: ease-out;
+  --t-pop: 150ms;
+}

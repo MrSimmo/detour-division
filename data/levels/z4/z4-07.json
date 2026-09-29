@@ -1,0 +1,170 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z4-07",
+ "zone": 4,
+ "index": 7,
+ "name": "Night Shift",
+ "mode": "suddenDeath",
+ "seed": 407,
+ "grid": {
+  "cols": 22,
+  "rows": 15
+ },
+ "tiles": [
+  "......................",
+  "......................",
+  "..........#...........",
+  "......................",
+  ".....##...............",
+  "......................",
+  "......................",
+  "..............##......",
+  "......................",
+  "......................",
+  ".....##...............",
+  "......................",
+  "..........#...........",
+  "......................",
+  "......................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 6,
+    "to": 8
+   },
+   "exit": {
+    "edge": "E",
+    "from": 6,
+    "to": 8
+   }
+  },
+  {
+   "id": "B",
+   "entrance": {
+    "edge": "N",
+    "from": 3,
+    "to": 5
+   },
+   "exit": {
+    "edge": "E",
+    "from": 6,
+    "to": 8
+   }
+  },
+  {
+   "id": "C",
+   "entrance": {
+    "edge": "S",
+    "from": 3,
+    "to": 5
+   },
+   "exit": {
+    "edge": "E",
+    "from": 6,
+    "to": 8
+   }
+  }
+ ],
+ "lives": 5,
+ "startCash": 340,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "sparkplug",
+   "teaurn"
+  ]
+ },
+ "waves": {
+  "count": [
+   32,
+   37,
+   42
+  ],
+  "interval": 15,
+  "recipe": {
+   "b0": 7,
+   "g": 1.045,
+   "airEvery": 6,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "brolly",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 4,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 4,
+     "weight": 1
+    },
+    {
+     "enemy": "tubthumper",
+     "from": 6,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 7,
+     "weight": 2
+    },
+    {
+     "enemy": "sawbones",
+     "from": 8,
+     "weight": 1
+    }
+   ],
+   "hp": 0.615
+  },
+  "overrides": [
+   {
+    "wave": 1,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 6
+     }
+    ]
+   },
+   {
+    "wave": 2,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 8
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "Three roads in the dark, one gate. Keep the lamps lit and hold on until the shift ends."
+ ],
+ "modeParams": {
+  "timer": [
+   360,
+   420,
+   480
+  ]
+ },
+ "night": true
+}

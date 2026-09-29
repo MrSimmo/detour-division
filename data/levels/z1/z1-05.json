@@ -1,0 +1,104 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z1-05",
+ "zone": 1,
+ "index": 5,
+ "name": "Kettle Crossing",
+ "mode": "standard",
+ "seed": 105,
+ "grid": {
+  "cols": 22,
+  "rows": 13
+ },
+ "tiles": [
+  "......................",
+  "......................",
+  "...##............##...",
+  "......................",
+  ".........#............",
+  "......................",
+  "......................",
+  "......................",
+  "............#.........",
+  "......................",
+  "...##............##...",
+  "......................",
+  "......................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 170,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper"
+  ]
+ },
+ "waves": {
+  "count": [
+   21,
+   26,
+   31
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 6,
+   "g": 1.0867,
+   "airEvery": 6,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 3,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 5,
+     "weight": 2
+    }
+   ],
+   "hp": 1
+  },
+  "overrides": [
+   {
+    "wave": 5,
+    "groups": [
+     {
+      "enemy": "tinkettle",
+      "count": 3
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "Tin Kettles shrug off small bullets. A Thumper's shells go straight through their armour, but it can't hit anything too close."
+ ]
+}

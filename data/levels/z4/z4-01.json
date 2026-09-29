@@ -1,0 +1,128 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z4-01",
+ "zone": 4,
+ "index": 1,
+ "name": "Conveyor Junction",
+ "mode": "standard",
+ "seed": 401,
+ "grid": {
+  "cols": 22,
+  "rows": 13
+ },
+ "tiles": [
+  "......................",
+  "......................",
+  "...>>>>>>>>>>>>>>>>...",
+  "......................",
+  "...........v..........",
+  "..#........v..........",
+  ".......#...v...#......",
+  "...........v.......#..",
+  "...........v..........",
+  "......................",
+  "...<<<<<<<<<<<<<<<<...",
+  "......................",
+  "......................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 300,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "sparkplug",
+   "teaurn"
+  ]
+ },
+ "waves": {
+  "count": [
+   25,
+   30,
+   35
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 7.5,
+   "g": 1.0683,
+   "airEvery": 7,
+   "eliteFrom": 11,
+   "eliteEvery": 5,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "puttputt",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "brolly",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "sawbones",
+     "from": 4,
+     "weight": 1
+    },
+    {
+     "enemy": "gasbag",
+     "from": 7,
+     "weight": 1
+    },
+    {
+     "enemy": "lummox",
+     "from": 8,
+     "weight": 1
+    }
+   ],
+   "hp": 0.64
+  },
+  "overrides": []
+ },
+ "hints": [
+  "The belts carry anything standing on them, and you can't build on a belt. A Tea Urn doesn't shoot, but every tower next to it works harder."
+ ]
+}

@@ -1,0 +1,117 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z2-01",
+ "zone": 2,
+ "index": 1,
+ "name": "Dustdevil Drift",
+ "mode": "standard",
+ "seed": 201,
+ "grid": {
+  "cols": 24,
+  "rows": 13
+ },
+ "tiles": [
+  "........................",
+  "........................",
+  "..##................##..",
+  "..##....................",
+  "..........#.............",
+  "........................",
+  "........................",
+  "........................",
+  ".............#..........",
+  "....................##..",
+  "..##................##..",
+  "........................",
+  "........................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 230,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "scorcher"
+  ]
+ },
+ "waves": {
+  "count": [
+   21,
+   26,
+   31
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 7,
+   "g": 1.0759,
+   "airEvery": 6,
+   "eliteFrom": 13,
+   "eliteEvery": 7,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "puttputt",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 4,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 6,
+     "weight": 2
+    },
+    {
+     "enemy": "lummox",
+     "from": 10,
+     "weight": 1
+    }
+   ],
+   "hp": 0.8
+  },
+  "overrides": [
+   {
+    "wave": 2,
+    "groups": [
+     {
+      "enemy": "puttputt",
+      "count": 8
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "Putt-Putts come in packs, too fast and too many to pick off one by one. A Scorcher's flames catch the whole pack at once."
+ ]
+}

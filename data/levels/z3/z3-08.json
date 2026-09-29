@@ -1,0 +1,195 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z3-08",
+ "zone": 3,
+ "index": 8,
+ "name": "Grinder's Glacier",
+ "mode": "standard",
+ "seed": 308,
+ "grid": {
+  "cols": 22,
+  "rows": 13
+ },
+ "tiles": [
+  "......................",
+  "......................",
+  "....ii...###..........",
+  "....ii............#...",
+  "......................",
+  "......................",
+  "..............#.......",
+  "......................",
+  "......................",
+  "...#............ii....",
+  "..........iii...ii....",
+  "......................",
+  "......................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 300,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "sparkplug",
+   "sunbeam"
+  ]
+ },
+ "waves": {
+  "count": [
+   27,
+   32,
+   37
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 7.5,
+   "g": 1.0683,
+   "airEvery": 7,
+   "eliteFrom": 12,
+   "eliteEvery": 6,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "puttputt",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "brolly",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 4,
+     "weight": 2
+    },
+    {
+     "enemy": "lummox",
+     "from": 9,
+     "weight": 1
+    },
+    {
+     "enemy": "sawbones",
+     "from": 3,
+     "weight": 1
+    },
+    {
+     "enemy": "gasbag",
+     "from": 6,
+     "weight": 1
+    }
+   ],
+   "hp": 0.8
+  },
+  "overrides": [
+   {
+    "wave": 27,
+    "difficulties": [
+     "casual"
+    ],
+    "groups": [
+     {
+      "enemy": "grinder",
+      "count": 1,
+      "delay": 6
+     },
+     {
+      "enemy": "sawbones",
+      "count": 3
+     },
+     {
+      "enemy": "brolly",
+      "count": 5,
+      "delay": 4
+     }
+    ]
+   },
+   {
+    "wave": 32,
+    "difficulties": [
+     "tough"
+    ],
+    "groups": [
+     {
+      "enemy": "grinder",
+      "count": 1,
+      "delay": 6
+     },
+     {
+      "enemy": "sawbones",
+      "count": 3
+     },
+     {
+      "enemy": "brolly",
+      "count": 5,
+      "delay": 4
+     }
+    ]
+   },
+   {
+    "wave": 37,
+    "difficulties": [
+     "heroic"
+    ],
+    "groups": [
+     {
+      "enemy": "grinder",
+      "count": 1,
+      "delay": 6
+     },
+     {
+      "enemy": "sawbones",
+      "count": 3
+     },
+     {
+      "enemy": "brolly",
+      "count": 5,
+      "delay": 4
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "The Glacier Grinder hides behind a shell of ice that grows back if you give it time. Break the shell, then keep the pressure on."
+ ]
+}

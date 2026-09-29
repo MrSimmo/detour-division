@@ -1,0 +1,448 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z5-04",
+ "zone": 5,
+ "index": 4,
+ "name": "Obsidian Knot",
+ "mode": "puzzle",
+ "seed": 504,
+ "grid": {
+  "cols": 18,
+  "rows": 11
+ },
+ "tiles": [
+  "..................",
+  "..bb..bbbb..bb....",
+  "..bb......b.bb.bb.",
+  ".....bb...b.......",
+  "..b..bb.......bb..",
+  "......b..bb...b...",
+  "..b.......b.......",
+  ".....bb...b..bb...",
+  "..bb..........bb..",
+  "..bb..bbbb..b.....",
+  ".................."
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 4,
+    "to": 6
+   },
+   "exit": {
+    "edge": "E",
+    "from": 4,
+    "to": 6
+   }
+  }
+ ],
+ "lives": 10,
+ "startCash": 900,
+ "loadout": {
+  "fixed": [
+   "rattler",
+   "thumper",
+   "sparkplug",
+   "icebox",
+   "sunbeam"
+  ],
+  "bot": [
+   "rattler",
+   "thumper",
+   "sparkplug",
+   "icebox",
+   "sunbeam"
+  ]
+ },
+ "waves": {
+  "count": [
+   18,
+   18,
+   18
+  ],
+  "interval": 18,
+  "recipe": {
+   "b0": 1,
+   "g": 1,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 1
+    }
+   ]
+  },
+  "overrides": [
+   {
+    "wave": 1,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 8,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 2,
+    "groups": [
+     {
+      "enemy": "scarper",
+      "count": 8,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 3,
+    "groups": [
+     {
+      "enemy": "whirligig",
+      "count": 6,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 4,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 10,
+      "delay": 0
+     },
+     {
+      "enemy": "brolly",
+      "count": 3,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 5,
+    "groups": [
+     {
+      "enemy": "tinkettle",
+      "count": 3,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 6,
+    "groups": [
+     {
+      "enemy": "trio",
+      "count": 4,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 7,
+    "groups": [
+     {
+      "enemy": "whirligig",
+      "count": 8,
+      "delay": 0
+     },
+     {
+      "enemy": "scarper",
+      "count": 6,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 8,
+    "groups": [
+     {
+      "enemy": "brolly",
+      "count": 6,
+      "delay": 0
+     },
+     {
+      "enemy": "sawbones",
+      "count": 2,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 9,
+    "groups": [
+     {
+      "enemy": "tinkettle",
+      "count": 4,
+      "delay": 0
+     },
+     {
+      "enemy": "footling",
+      "count": 10,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 10,
+    "groups": [
+     {
+      "enemy": "gasbag",
+      "count": 1,
+      "delay": 0
+     },
+     {
+      "enemy": "whirligig",
+      "count": 6,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 11,
+    "groups": [
+     {
+      "enemy": "trio",
+      "count": 6,
+      "delay": 0
+     },
+     {
+      "enemy": "tubthumper",
+      "count": 2,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 12,
+    "groups": [
+     {
+      "enemy": "lummox",
+      "count": 2,
+      "delay": 0
+     },
+     {
+      "enemy": "scarper",
+      "count": 8,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 13,
+    "groups": [
+     {
+      "enemy": "brolly",
+      "count": 8,
+      "delay": 0
+     },
+     {
+      "enemy": "sawbones",
+      "count": 3,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 14,
+    "groups": [
+     {
+      "enemy": "gasbag",
+      "count": 2,
+      "delay": 0
+     },
+     {
+      "enemy": "tinkettle",
+      "count": 4,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 15,
+    "groups": [
+     {
+      "enemy": "trio",
+      "count": 8,
+      "delay": 0
+     },
+     {
+      "enemy": "whirligig",
+      "count": 8,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 16,
+    "groups": [
+     {
+      "enemy": "lummox",
+      "count": 3,
+      "delay": 0
+     },
+     {
+      "enemy": "tubthumper",
+      "count": 3,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 17,
+    "groups": [
+     {
+      "enemy": "tinkettle",
+      "count": 6,
+      "delay": 0
+     },
+     {
+      "enemy": "brolly",
+      "count": 8,
+      "delay": 3
+     },
+     {
+      "enemy": "whirligig",
+      "count": 8,
+      "delay": 6
+     }
+    ]
+   },
+   {
+    "wave": 18,
+    "groups": [
+     {
+      "enemy": "lummox",
+      "count": 3,
+      "delay": 0
+     },
+     {
+      "enemy": "gasbag",
+      "count": 2,
+      "delay": 3
+     },
+     {
+      "enemy": "scarper",
+      "count": 12,
+      "delay": 6
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "The obsidian can be cleared, but it isn't cheap, and every coin spent clearing is a coin not spent on towers."
+ ],
+ "blockers": {
+  "clearCost": 30
+ },
+ "bot": {
+  "plan": [
+   {
+    "wave": 0,
+    "clear": {
+     "cx": 2,
+     "cy": 9
+    }
+   },
+   {
+    "wave": 0,
+    "clear": {
+     "cx": 2,
+     "cy": 8
+    }
+   },
+   {
+    "wave": 0,
+    "clear": {
+     "cx": 5,
+     "cy": 3
+    }
+   },
+   {
+    "wave": 0,
+    "clear": {
+     "cx": 2,
+     "cy": 1
+    }
+   },
+   {
+    "wave": 0,
+    "clear": {
+     "cx": 3,
+     "cy": 2
+    }
+   },
+   {
+    "wave": 0,
+    "clear": {
+     "cx": 6,
+     "cy": 5
+    }
+   },
+   {
+    "wave": 0,
+    "build": {
+     "tower": "sunbeam",
+     "cx": 8,
+     "cy": 5
+    }
+   },
+   {
+    "wave": 0,
+    "upgrade": {
+     "cx": 8,
+     "cy": 5
+    }
+   },
+   {
+    "wave": 0,
+    "build": {
+     "tower": "sunbeam",
+     "cx": 12,
+     "cy": 4
+    }
+   },
+   {
+    "wave": 0,
+    "upgrade": {
+     "cx": 12,
+     "cy": 4
+    }
+   },
+   {
+    "wave": 0,
+    "build": {
+     "tower": "sunbeam",
+     "cx": 9,
+     "cy": 3
+    }
+   },
+   {
+    "wave": 0,
+    "upgrade": {
+     "cx": 9,
+     "cy": 3
+    }
+   },
+   {
+    "wave": 0,
+    "build": {
+     "tower": "sunbeam",
+     "cx": 11,
+     "cy": 6
+    }
+   },
+   {
+    "wave": 0,
+    "upgrade": {
+     "cx": 11,
+     "cy": 6
+    }
+   }
+  ],
+  "generic": false
+ }
+}

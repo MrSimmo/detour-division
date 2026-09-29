@@ -1,0 +1,530 @@
+{
+  "rattler": {
+    "name": "Rattler",
+    "kind": "hitscan",
+    "targets": {
+      "ground": true,
+      "air": true
+    },
+    "turretTurn": 720,
+    "aimTolerance": 20,
+    "tiers": [
+      {
+        "cost": 15,
+        "range": 2.5,
+        "rate": 5,
+        "damage": 4,
+        "dmgType": "kinetic"
+      },
+      {
+        "cost": 20,
+        "range": 2.75,
+        "rate": 5,
+        "damage": 7,
+        "dmgType": "kinetic"
+      },
+      {
+        "cost": 45,
+        "range": 2.75,
+        "rate": 6,
+        "damage": 11,
+        "dmgType": "kinetic",
+        "armourPen": 3
+      }
+    ]
+  },
+  "treacle": {
+    "name": "Treacle Pump",
+    "kind": "hitscan",
+    "targets": {
+      "ground": true,
+      "air": false
+    },
+    "turretTurn": 540,
+    "aimTolerance": 25,
+    "tiers": [
+      {
+        "cost": 25,
+        "range": 2.25,
+        "rate": 1.2,
+        "damage": 2,
+        "dmgType": "kinetic",
+        "slow": 0.35,
+        "slowDur": 2
+      },
+      {
+        "cost": 30,
+        "range": 2.5,
+        "rate": 1.2,
+        "damage": 2,
+        "dmgType": "kinetic",
+        "slow": 0.45,
+        "slowDur": 2
+      },
+      {
+        "cost": 60,
+        "range": 2.5,
+        "rate": 1.2,
+        "damage": 3,
+        "dmgType": "kinetic",
+        "slow": 0.55,
+        "slowDur": 2,
+        "splash": 0.75,
+        "zoneSlow": 0.35,
+        "zoneDur": 3,
+        "zoneRadius": 0.5
+      }
+    ]
+  },
+  "skylark": {
+    "name": "Skylark",
+    "kind": "homing",
+    "targets": {
+      "ground": false,
+      "air": true
+    },
+    "turretTurn": 360,
+    "aimTolerance": 45,
+    "tiers": [
+      {
+        "cost": 35,
+        "range": 4,
+        "rate": 0.8,
+        "damage": 30,
+        "dmgType": "explosive",
+        "splash": 0.5,
+        "splashEdge": 0.5,
+        "projSpeed": 7,
+        "projTurn": 540
+      },
+      {
+        "cost": 40,
+        "range": 4.5,
+        "rate": 0.8,
+        "damage": 50,
+        "dmgType": "explosive",
+        "splash": 0.5,
+        "splashEdge": 0.5,
+        "projSpeed": 7.5,
+        "projTurn": 540
+      },
+      {
+        "cost": 80,
+        "range": 4.5,
+        "rate": 0.8,
+        "damage": 60,
+        "dmgType": "explosive",
+        "splash": 0.55,
+        "splashEdge": 0.5,
+        "projSpeed": 8,
+        "projTurn": 600,
+        "salvo": 2
+      }
+    ]
+  },
+  "thumper": {
+    "name": "Thumper",
+    "kind": "lob",
+    "targets": {
+      "ground": true,
+      "air": false
+    },
+    "turretTurn": 180,
+    "aimTolerance": 15,
+    "tiers": [
+      {
+        "cost": 60,
+        "range": 6,
+        "minRange": 1.75,
+        "rate": 0.4,
+        "damage": 70,
+        "dmgType": "explosive",
+        "splash": 1,
+        "splashEdge": 0.5,
+        "flight": 1.2
+      },
+      {
+        "cost": 60,
+        "range": 6.5,
+        "minRange": 1.75,
+        "rate": 0.4,
+        "damage": 110,
+        "dmgType": "explosive",
+        "splash": 1,
+        "splashEdge": 0.5,
+        "flight": 1.2
+      },
+      {
+        "cost": 130,
+        "range": 6.5,
+        "minRange": 1.75,
+        "rate": 0.4,
+        "damage": 110,
+        "dmgType": "explosive",
+        "splash": 1.1,
+        "splashEdge": 0.5,
+        "flight": 1.2,
+        "bomblets": 4,
+        "bombletDamage": 25,
+        "bombletSplash": 0.5
+      }
+    ]
+  },
+  "scorcher": {
+    "name": "Scorcher",
+    "kind": "cone",
+    "targets": {
+      "ground": true,
+      "air": false
+    },
+    "turretTurn": 360,
+    "aimTolerance": 30,
+    "tiers": [
+      {
+        "cost": 45,
+        "range": 1.75,
+        "rate": 1,
+        "damage": 18,
+        "dmgType": "fire",
+        "cone": 60,
+        "burnDps": 6,
+        "burnDur": 3
+      },
+      {
+        "cost": 50,
+        "range": 2,
+        "rate": 1,
+        "damage": 30,
+        "dmgType": "fire",
+        "cone": 60,
+        "burnDps": 8,
+        "burnDur": 3
+      },
+      {
+        "cost": 100,
+        "range": 2,
+        "rate": 1,
+        "damage": 48,
+        "dmgType": "fire",
+        "cone": 70,
+        "burnDps": 10,
+        "burnDur": 3,
+        "patchDps": 12,
+        "patchDur": 2,
+        "patchEvery": 0.5,
+        "zoneRadius": 0.45
+      }
+    ]
+  },
+  "sparkplug": {
+    "name": "Sparkplug",
+    "kind": "chain",
+    "targets": {
+      "ground": true,
+      "air": true
+    },
+    "turretTurn": 540,
+    "aimTolerance": 35,
+    "tiers": [
+      {
+        "cost": 70,
+        "range": 3,
+        "rate": 0.8,
+        "damage": 40,
+        "dmgType": "shock",
+        "jumps": 3,
+        "jumpRange": 1.5,
+        "jumpFalloff": 0.2
+      },
+      {
+        "cost": 70,
+        "range": 3,
+        "rate": 0.8,
+        "damage": 60,
+        "dmgType": "shock",
+        "jumps": 4,
+        "jumpRange": 1.5,
+        "jumpFalloff": 0.2
+      },
+      {
+        "cost": 140,
+        "range": 3.25,
+        "rate": 0.8,
+        "damage": 85,
+        "dmgType": "shock",
+        "jumps": 6,
+        "jumpRange": 1.6,
+        "jumpFalloff": 0.2,
+        "stunEvery": 4,
+        "stunDur": 0.4
+      }
+    ]
+  },
+  "sunbeam": {
+    "name": "Sunbeam",
+    "kind": "beam",
+    "targets": {
+      "ground": true,
+      "air": true
+    },
+    "turretTurn": 240,
+    "aimTolerance": 6,
+    "tiers": [
+      {
+        "cost": 90,
+        "range": 5,
+        "rate": 0.5,
+        "damage": 120,
+        "dmgType": "beam",
+        "charge": 1.2,
+        "beamWidth": 0.3
+      },
+      {
+        "cost": 90,
+        "range": 5,
+        "rate": 0.5,
+        "damage": 190,
+        "dmgType": "beam",
+        "charge": 1.0,
+        "beamWidth": 0.3
+      },
+      {
+        "cost": 180,
+        "range": 5.5,
+        "rate": 0.5,
+        "damage": 280,
+        "dmgType": "beam",
+        "charge": 1.0,
+        "beamWidth": 0.5,
+        "burnDps": 10,
+        "burnDur": 2
+      }
+    ]
+  },
+  "icebox": {
+    "name": "Icebox",
+    "kind": "pulse",
+    "targeting": false,
+    "targets": {
+      "ground": true,
+      "air": false
+    },
+    "turretTurn": 1,
+    "aimTolerance": 180,
+    "tiers": [
+      {
+        "cost": 65,
+        "range": 1.75,
+        "rate": 0.2857,
+        "damage": 10,
+        "dmgType": "cold",
+        "freeze": 1,
+        "brittle": 0.2,
+        "brittleDur": 2,
+        "bossSlow": 0.3,
+        "bossSlowDur": 1
+      },
+      {
+        "cost": 70,
+        "range": 2,
+        "rate": 0.2857,
+        "damage": 10,
+        "dmgType": "cold",
+        "freeze": 1.3,
+        "brittle": 0.2,
+        "brittleDur": 2,
+        "bossSlow": 0.3,
+        "bossSlowDur": 1
+      },
+      {
+        "cost": 140,
+        "range": 2,
+        "rate": 0.3571,
+        "damage": 10,
+        "dmgType": "cold",
+        "freeze": 1.3,
+        "brittle": 0.35,
+        "brittleDur": 2,
+        "bossSlow": 0.3,
+        "bossSlowDur": 1
+      }
+    ]
+  },
+  "teaurn": {
+    "name": "Tea Urn",
+    "kind": "aura",
+    "targeting": false,
+    "targets": {
+      "ground": false,
+      "air": false
+    },
+    "turretTurn": 1,
+    "aimTolerance": 180,
+    "tiers": [
+      {
+        "cost": 80,
+        "range": 1.5,
+        "rate": 1,
+        "auraRate": 0.15
+      },
+      {
+        "cost": 80,
+        "range": 1.5,
+        "rate": 1,
+        "auraRate": 0.25,
+        "auraRange": 0.1
+      },
+      {
+        "cost": 160,
+        "range": 1.6,
+        "rate": 1,
+        "auraRate": 0.3,
+        "auraRange": 0.15,
+        "auraDamage": 0.15
+      }
+    ]
+  },
+  "bellower": {
+    "name": "Bellower",
+    "kind": "bellow",
+    "targets": {
+      "ground": true,
+      "air": false
+    },
+    "turretTurn": 360,
+    "aimTolerance": 30,
+    "tiers": [
+      {
+        "cost": 75,
+        "range": 2.25,
+        "rate": 0.2,
+        "cone": 90,
+        "reverse": 1.2,
+        "reverseImmune": 4
+      },
+      {
+        "cost": 70,
+        "range": 2.25,
+        "rate": 0.2,
+        "cone": 110,
+        "reverse": 1.6,
+        "reverseImmune": 4
+      },
+      {
+        "cost": 150,
+        "range": 2.5,
+        "rate": 0.2,
+        "cone": 110,
+        "reverse": 2,
+        "reverseImmune": 4,
+        "dizzy": 0.3
+      }
+    ]
+  },
+  "bubbler": {
+    "name": "Bubbler",
+    "kind": "bubble",
+    "targets": {
+      "ground": true,
+      "air": true
+    },
+    "turretTurn": 360,
+    "aimTolerance": 45,
+    "tiers": [
+      {
+        "cost": 55,
+        "range": 3,
+        "rate": 0.25,
+        "damage": 0,
+        "bubbles": 1,
+        "bubbleDur": 2.5,
+        "bubbleSpeed": 0.8,
+        "popDamage": 15
+      },
+      {
+        "cost": 60,
+        "range": 3,
+        "rate": 0.25,
+        "damage": 0,
+        "bubbles": 2,
+        "bubbleDur": 3,
+        "bubbleSpeed": 0.8,
+        "popDamage": 15,
+        "heavyOk": true
+      },
+      {
+        "cost": 130,
+        "range": 3.25,
+        "rate": 0.25,
+        "damage": 0,
+        "bubbles": 3,
+        "bubbleDur": 3,
+        "bubbleSpeed": 0.8,
+        "popDamage": 15,
+        "heavyOk": true,
+        "zoneSlow": 0.3,
+        "zoneDur": 2,
+        "zoneRadius": 0.6
+      }
+    ]
+  },
+  "piechucker": {
+    "name": "Pie Chucker",
+    "kind": "lob",
+    "targets": {
+      "ground": true,
+      "air": false
+    },
+    "turretTurn": 240,
+    "aimTolerance": 20,
+    "tiers": [
+      {
+        "cost": 50,
+        "range": 4,
+        "minRange": 1,
+        "rate": 0.6,
+        "damage": 25,
+        "dmgType": "kinetic",
+        "splash": 0.75,
+        "splashEdge": 0.6,
+        "flight": 0.9,
+        "shred": 4,
+        "shredDur": 4,
+        "slow": 0.15,
+        "slowDur": 4
+      },
+      {
+        "cost": 55,
+        "range": 4,
+        "minRange": 1,
+        "rate": 0.6,
+        "damage": 40,
+        "dmgType": "kinetic",
+        "splash": 0.75,
+        "splashEdge": 0.6,
+        "flight": 0.9,
+        "shred": 6,
+        "shredDur": 4,
+        "slow": 0.15,
+        "slowDur": 4
+      },
+      {
+        "cost": 120,
+        "range": 4.25,
+        "minRange": 1,
+        "rate": 0.6,
+        "damage": 40,
+        "dmgType": "kinetic",
+        "splash": 0.75,
+        "splashEdge": 0.6,
+        "flight": 0.9,
+        "shred": 6,
+        "shredDur": 4,
+        "slow": 0.15,
+        "slowDur": 4,
+        "salvo": 3,
+        "spread": 0.6
+      }
+    ]
+  }
+}

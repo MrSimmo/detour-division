@@ -1,0 +1,157 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z5-05",
+ "zone": 5,
+ "index": 5,
+ "name": "Magma Tunnels",
+ "mode": "standard",
+ "seed": 505,
+ "grid": {
+  "cols": 24,
+  "rows": 13
+ },
+ "tiles": [
+  "..........~~~~..........",
+  "........##~~~~..........",
+  "..#......o~~~~##..t.....",
+  "........##~~~~o...t.....",
+  "..........~~~~##..t.....",
+  "..........~~~~....t.....",
+  "...##.....~~~~..........",
+  "..........~~~~......t...",
+  "..........~~~~##....t...",
+  "........##~~~~o.....t...",
+  ".....#...o~~~~##....t...",
+  "........##~~~~..........",
+  "..........~~~~..tttt...."
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 12,
+ "startCash": 360,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "piechucker",
+   "sunbeam"
+  ]
+ },
+ "waves": {
+  "count": [
+   29,
+   34,
+   39
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 8.5,
+   "g": 1.0652,
+   "airEvery": 7,
+   "eliteFrom": 10,
+   "eliteEvery": 5,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "puttputt",
+     "from": 1,
+     "weight": 1
+    },
+    {
+     "enemy": "brolly",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 1,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "sawbones",
+     "from": 3,
+     "weight": 1
+    },
+    {
+     "enemy": "tubthumper",
+     "from": 3,
+     "weight": 1
+    },
+    {
+     "enemy": "gasbag",
+     "from": 6,
+     "weight": 1
+    },
+    {
+     "enemy": "lummox",
+     "from": 7,
+     "weight": 1
+    }
+   ],
+   "hp": 0.512
+  },
+  "overrides": []
+ },
+ "hints": [
+  "The only way over the magma is underneath it. Maze both banks, and watch the trenches on the far side. Only 12 lives."
+ ],
+ "tunnels": [
+  {
+   "a": [
+    9,
+    2
+   ],
+   "b": [
+    14,
+    9
+   ],
+   "length": 5
+  },
+  {
+   "a": [
+    9,
+    10
+   ],
+   "b": [
+    14,
+    3
+   ],
+   "length": 5
+  }
+ ]
+}

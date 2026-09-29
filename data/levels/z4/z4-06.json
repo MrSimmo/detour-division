@@ -1,0 +1,403 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z4-06",
+ "zone": 4,
+ "index": 6,
+ "name": "Sludge Sluice",
+ "mode": "puzzle",
+ "seed": 406,
+ "grid": {
+  "cols": 18,
+  "rows": 11
+ },
+ "tiles": [
+  "..................",
+  "..................",
+  "..>>>>>>>>>>>>>>..",
+  "........~.........",
+  "........~.........",
+  "........=.........",
+  "........~.........",
+  "........~.........",
+  "..<<<<<<<<<<<<<<..",
+  "..................",
+  ".................."
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 4,
+    "to": 6
+   },
+   "exit": {
+    "edge": "E",
+    "from": 4,
+    "to": 6
+   }
+  }
+ ],
+ "lives": 10,
+ "startCash": 560,
+ "loadout": {
+  "fixed": [
+   "teaurn",
+   "piechucker",
+   "thumper",
+   "rattler"
+  ],
+  "bot": [
+   "teaurn",
+   "piechucker",
+   "thumper",
+   "rattler"
+  ]
+ },
+ "waves": {
+  "count": [
+   16,
+   16,
+   16
+  ],
+  "interval": 18,
+  "recipe": {
+   "b0": 1,
+   "g": 1,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 1
+    }
+   ]
+  },
+  "overrides": [
+   {
+    "wave": 1,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 8,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 2,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 10,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 3,
+    "groups": [
+     {
+      "enemy": "trio",
+      "count": 3,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 4,
+    "groups": [
+     {
+      "enemy": "tinkettle",
+      "count": 3,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 5,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 10,
+      "delay": 0
+     },
+     {
+      "enemy": "tubthumper",
+      "count": 2,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 6,
+    "groups": [
+     {
+      "enemy": "trio",
+      "count": 5,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 7,
+    "groups": [
+     {
+      "enemy": "brolly",
+      "count": 7,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 8,
+    "groups": [
+     {
+      "enemy": "tinkettle",
+      "count": 4,
+      "delay": 0
+     },
+     {
+      "enemy": "footling",
+      "count": 8,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 9,
+    "groups": [
+     {
+      "enemy": "trio",
+      "count": 6,
+      "delay": 0
+     },
+     {
+      "enemy": "tubthumper",
+      "count": 2,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 10,
+    "groups": [
+     {
+      "enemy": "lummox",
+      "count": 2,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 11,
+    "groups": [
+     {
+      "enemy": "brolly",
+      "count": 8,
+      "delay": 0
+     },
+     {
+      "enemy": "tubthumper",
+      "count": 3,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 12,
+    "groups": [
+     {
+      "enemy": "tinkettle",
+      "count": 6,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 13,
+    "groups": [
+     {
+      "enemy": "trio",
+      "count": 8,
+      "delay": 0
+     },
+     {
+      "enemy": "footling",
+      "count": 10,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 14,
+    "groups": [
+     {
+      "enemy": "lummox",
+      "count": 2,
+      "delay": 0
+     },
+     {
+      "enemy": "tinkettle",
+      "count": 4,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 15,
+    "groups": [
+     {
+      "enemy": "trio",
+      "count": 8,
+      "delay": 0
+     },
+     {
+      "enemy": "tubthumper",
+      "count": 4,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 16,
+    "groups": [
+     {
+      "enemy": "lummox",
+      "count": 3,
+      "delay": 0
+     },
+     {
+      "enemy": "brolly",
+      "count": 8,
+      "delay": 3
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "No bounty, a fixed purse, and belts to work round. Where you put the Tea Urns matters more than how many guns you have."
+ ],
+ "bot": {
+  "plan": [
+   {
+    "build": {
+     "tower": "teaurn",
+     "cx": 3,
+     "cy": 5
+    }
+   },
+   {
+    "build": {
+     "tower": "piechucker",
+     "cx": 3,
+     "cy": 6
+    }
+   },
+   {
+    "build": {
+     "tower": "thumper",
+     "cx": 5,
+     "cy": 3
+    }
+   },
+   {
+    "build": {
+     "tower": "thumper",
+     "cx": 2,
+     "cy": 4
+    }
+   },
+   {
+    "build": {
+     "tower": "thumper",
+     "cx": 2,
+     "cy": 3
+    }
+   },
+   {
+    "build": {
+     "tower": "thumper",
+     "cx": 4,
+     "cy": 4
+    }
+   },
+   {
+    "build": {
+     "tower": "thumper",
+     "cx": 4,
+     "cy": 6
+    }
+   },
+   {
+    "build": {
+     "tower": "piechucker",
+     "cx": 3,
+     "cy": 3
+    }
+   },
+   {
+    "build": {
+     "tower": "piechucker",
+     "cx": 2,
+     "cy": 6
+    }
+   },
+   {
+    "build": {
+     "tower": "rattler",
+     "cx": 17,
+     "cy": 2
+    }
+   },
+   {
+    "build": {
+     "tower": "rattler",
+     "cx": 1,
+     "cy": 2
+    }
+   },
+   {
+    "wave": 15,
+    "target": {
+     "cx": 5,
+     "cy": 3,
+     "mode": "strongest"
+    }
+   },
+   {
+    "wave": 15,
+    "target": {
+     "cx": 2,
+     "cy": 4,
+     "mode": "strongest"
+    }
+   },
+   {
+    "wave": 15,
+    "target": {
+     "cx": 2,
+     "cy": 3,
+     "mode": "strongest"
+    }
+   },
+   {
+    "wave": 15,
+    "target": {
+     "cx": 4,
+     "cy": 4,
+     "mode": "strongest"
+    }
+   },
+   {
+    "wave": 15,
+    "target": {
+     "cx": 4,
+     "cy": 6,
+     "mode": "strongest"
+    }
+   }
+  ],
+  "generic": false
+ }
+}

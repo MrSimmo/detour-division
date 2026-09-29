@@ -1,0 +1,141 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z5-02",
+ "zone": 5,
+ "index": 2,
+ "name": "Ashfall Terrace",
+ "mode": "timeTrial",
+ "seed": 502,
+ "grid": {
+  "cols": 22,
+  "rows": 13
+ },
+ "tiles": [
+  "......................",
+  "......................",
+  ".....##...............",
+  ".....##...............",
+  "......................",
+  "..........##..........",
+  "..........##..........",
+  "..........##..........",
+  "......................",
+  "...............##.....",
+  "...............##.....",
+  "......................",
+  "......................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  },
+  {
+   "id": "B",
+   "entrance": {
+    "edge": "N",
+    "from": 13,
+    "to": 15
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 480,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "scorcher",
+   "sparkplug",
+   "piechucker"
+  ]
+ },
+ "waves": {
+  "count": [
+   50,
+   55,
+   60
+  ],
+  "interval": 8,
+  "recipe": {
+   "b0": 20,
+   "g": 1.03,
+   "airEvery": 6,
+   "eliteFrom": 1,
+   "eliteEvery": 1,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "puttputt",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "brolly",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "whirligig",
+     "from": 1,
+     "weight": 1
+    },
+    {
+     "enemy": "tubthumper",
+     "from": 6,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 8,
+     "weight": 1
+    }
+   ],
+   "hp": 0.306
+  }
+ },
+ "hints": [
+  "Every one of them is an elite: tougher, and some with tricks. Knock out enough of them before the ash settles."
+ ],
+ "modeParams": {
+  "timer": [
+   360,
+   360,
+   360
+  ],
+  "target": [
+   320,
+   390,
+   460
+  ]
+ }
+}

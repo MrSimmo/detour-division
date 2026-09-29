@@ -1,0 +1,118 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z3-01",
+ "zone": 3,
+ "index": 1,
+ "name": "Snowdrop Slope",
+ "mode": "standard",
+ "seed": 301,
+ "grid": {
+  "cols": 22,
+  "rows": 13
+ },
+ "tiles": [
+  "......................",
+  "...................#..",
+  ".....iii..............",
+  ".....iii........ii....",
+  "...........#....ii....",
+  "......................",
+  "......................",
+  "......................",
+  "............iiii......",
+  "........ii..iiii......",
+  "..##....ii............",
+  "...................#..",
+  "......................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 280,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "sparkplug",
+   "icebox"
+  ]
+ },
+ "waves": {
+  "count": [
+   23,
+   28,
+   33
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 7,
+   "g": 1.0683,
+   "airEvery": 7,
+   "eliteFrom": 12,
+   "eliteEvery": 6,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "puttputt",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "brolly",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 4,
+     "weight": 2
+    },
+    {
+     "enemy": "lummox",
+     "from": 9,
+     "weight": 1
+    }
+   ],
+   "hp": 0.512
+  },
+  "overrides": []
+ },
+ "hints": [
+  "Anything on the ice goes faster, and you can't build on it. An Icebox freezes everything around it solid for a moment."
+ ]
+}

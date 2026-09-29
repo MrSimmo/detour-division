@@ -1,0 +1,185 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z2-08",
+ "zone": 2,
+ "index": 8,
+ "name": "Dredger Dunes",
+ "mode": "standard",
+ "seed": 208,
+ "grid": {
+  "cols": 22,
+  "rows": 13
+ },
+ "tiles": [
+  "......................",
+  "......................",
+  "...##............##...",
+  "...#......#.......#...",
+  "......................",
+  "......................",
+  "......................",
+  "......................",
+  "......................",
+  "...#.......#......#...",
+  "...##............##...",
+  "......................",
+  "......................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 300,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "sparkplug",
+   "piechucker"
+  ]
+ },
+ "waves": {
+  "count": [
+   25,
+   30,
+   35
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 7.5,
+   "g": 1.0683,
+   "airEvery": 7,
+   "eliteFrom": 12,
+   "eliteEvery": 6,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "puttputt",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "scarper",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "brolly",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 3,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 4,
+     "weight": 2
+    },
+    {
+     "enemy": "lummox",
+     "from": 7,
+     "weight": 1
+    }
+   ],
+   "hp": 1
+  },
+  "overrides": [
+   {
+    "wave": 25,
+    "difficulties": [
+     "casual"
+    ],
+    "groups": [
+     {
+      "enemy": "dredger",
+      "count": 1,
+      "delay": 6
+     },
+     {
+      "enemy": "footling",
+      "count": 14
+     },
+     {
+      "enemy": "brolly",
+      "count": 4,
+      "delay": 4
+     }
+    ]
+   },
+   {
+    "wave": 30,
+    "difficulties": [
+     "tough"
+    ],
+    "groups": [
+     {
+      "enemy": "dredger",
+      "count": 1,
+      "delay": 6
+     },
+     {
+      "enemy": "footling",
+      "count": 14
+     },
+     {
+      "enemy": "brolly",
+      "count": 4,
+      "delay": 4
+     }
+    ]
+   },
+   {
+    "wave": 35,
+    "difficulties": [
+     "heroic"
+    ],
+    "groups": [
+     {
+      "enemy": "dredger",
+      "count": 1,
+      "delay": 6
+     },
+     {
+      "enemy": "footling",
+      "count": 14
+     },
+     {
+      "enemy": "brolly",
+      "count": 4,
+      "delay": 4
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "The Dune Dredger is slow and huge, and it spits out Putt-Putts as it grinds along. Keep the splash coming."
+ ]
+}

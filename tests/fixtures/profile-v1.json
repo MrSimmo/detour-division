@@ -1,0 +1,15 @@
+{
+ "v": 1,
+ "stars": { "z1-01": 3, "z1-02": 2, "z1-03": 1, "z1-04": 1 },
+ "bests": {
+  "z1-01": { "casual": { "lives": 20, "seconds": 602, "kills": 410 }, "heroic": { "lives": 4, "seconds": 815, "kills": 700 } },
+  "z1-02": { "tough": { "lives": 19, "seconds": 701, "kills": 512 }, "endless": 23 }
+ },
+ "seen": { "tower.rattler": true, "enemy.footling.n": true, "enemy.scarper.e": true },
+ "loadouts": { "z1-03": ["rattler", "treacle", "skylark"] },
+ "settings": {
+  "master": 0.5, "music": 0.4, "sfx": 0.8, "ui": 0.6, "muted": false,
+  "quality": "auto", "renderer": "webgl", "shake": false, "reducedMotion": "on", "colourBlind": true, "routes": true,
+  "keys": { "slot1": "1", "slot2": "2", "slot3": "3", "slot4": "4", "slot5": "5", "slot6": "6", "cancel": "Escape", "pause": " ", "speed": "f", "wave": "n", "upgrade": "u", "sell": "s", "target": "t", "routes": "r", "mute": "m" }
+ }
+}

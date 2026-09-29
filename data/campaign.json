@@ -1,0 +1,426 @@
+{
+ "zones": [
+  {
+   "zone": 1,
+   "name": "Buttercup Downs"
+  },
+  {
+   "zone": 2,
+   "name": "Scorchsand Flats"
+  },
+  {
+   "zone": 3,
+   "name": "Frostnip Fells"
+  },
+  {
+   "zone": 4,
+   "name": "Grimebottom Works"
+  },
+  {
+   "zone": 5,
+   "name": "Mount Kerblam"
+  }
+ ],
+ "levels": [
+  {
+   "id": "z1-01",
+   "zone": 1,
+   "index": 1,
+   "name": "Primrose Lane",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.06,
+   "y": 0.86
+  },
+  {
+   "id": "z1-02",
+   "zone": 1,
+   "index": 2,
+   "name": "Treacle Tart Farm",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.11,
+   "y": 0.78
+  },
+  {
+   "id": "z1-03",
+   "zone": 1,
+   "index": 3,
+   "name": "Skylark Common",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.17,
+   "y": 0.84
+  },
+  {
+   "id": "z1-04",
+   "zone": 1,
+   "index": 4,
+   "name": "Haybale Hollow",
+   "mode": "puzzle",
+   "boss": false,
+   "x": 0.23,
+   "y": 0.78
+  },
+  {
+   "id": "z1-05",
+   "zone": 1,
+   "index": 5,
+   "name": "Kettle Crossing",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.19,
+   "y": 0.69
+  },
+  {
+   "id": "z1-06",
+   "zone": 1,
+   "index": 6,
+   "name": "Two Stiles",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.25,
+   "y": 0.63
+  },
+  {
+   "id": "z1-07",
+   "zone": 1,
+   "index": 7,
+   "name": "Millrace Meadow",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.31,
+   "y": 0.7
+  },
+  {
+   "id": "z1-08",
+   "zone": 1,
+   "index": 8,
+   "name": "Flattener's Folly",
+   "mode": "standard",
+   "boss": true,
+   "x": 0.36,
+   "y": 0.8
+  },
+  {
+   "id": "z2-01",
+   "zone": 2,
+   "index": 1,
+   "name": "Dustdevil Drift",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.42,
+   "y": 0.87
+  },
+  {
+   "id": "z2-02",
+   "zone": 2,
+   "index": 2,
+   "name": "Mineshaft Gulch",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.48,
+   "y": 0.8
+  },
+  {
+   "id": "z2-03",
+   "zone": 2,
+   "index": 3,
+   "name": "Brolly Pass",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.54,
+   "y": 0.86
+  },
+  {
+   "id": "z2-04",
+   "zone": 2,
+   "index": 4,
+   "name": "Forked Mesa",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.6,
+   "y": 0.79
+  },
+  {
+   "id": "z2-05",
+   "zone": 2,
+   "index": 5,
+   "name": "Sandglass",
+   "mode": "suddenDeath",
+   "boss": false,
+   "x": 0.56,
+   "y": 0.7
+  },
+  {
+   "id": "z2-06",
+   "zone": 2,
+   "index": 6,
+   "name": "Custard Oasis",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.5,
+   "y": 0.64
+  },
+  {
+   "id": "z2-07",
+   "zone": 2,
+   "index": 7,
+   "name": "The Long Mirage",
+   "mode": "timeTrial",
+   "boss": false,
+   "x": 0.44,
+   "y": 0.58
+  },
+  {
+   "id": "z2-08",
+   "zone": 2,
+   "index": 8,
+   "name": "Dredger Dunes",
+   "mode": "standard",
+   "boss": true,
+   "x": 0.38,
+   "y": 0.52
+  },
+  {
+   "id": "z3-01",
+   "zone": 3,
+   "index": 1,
+   "name": "Snowdrop Slope",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.31,
+   "y": 0.46
+  },
+  {
+   "id": "z3-02",
+   "zone": 3,
+   "index": 2,
+   "name": "Gasbag Ridge",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.24,
+   "y": 0.41
+  },
+  {
+   "id": "z3-03",
+   "zone": 3,
+   "index": 3,
+   "name": "Sawbones Hollow",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.17,
+   "y": 0.46
+  },
+  {
+   "id": "z3-04",
+   "zone": 3,
+   "index": 4,
+   "name": "Glassy Mere",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.1,
+   "y": 0.4
+  },
+  {
+   "id": "z3-05",
+   "zone": 3,
+   "index": 5,
+   "name": "Cracked Ice",
+   "mode": "puzzle",
+   "boss": false,
+   "x": 0.08,
+   "y": 0.3
+  },
+  {
+   "id": "z3-06",
+   "zone": 3,
+   "index": 6,
+   "name": "Bubble Pass",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.14,
+   "y": 0.22
+  },
+  {
+   "id": "z3-07",
+   "zone": 3,
+   "index": 7,
+   "name": "Whiteout",
+   "mode": "suddenDeath",
+   "boss": false,
+   "x": 0.21,
+   "y": 0.28
+  },
+  {
+   "id": "z3-08",
+   "zone": 3,
+   "index": 8,
+   "name": "Grinder's Glacier",
+   "mode": "standard",
+   "boss": true,
+   "x": 0.28,
+   "y": 0.21
+  },
+  {
+   "id": "z4-01",
+   "zone": 4,
+   "index": 1,
+   "name": "Conveyor Junction",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.35,
+   "y": 0.15
+  },
+  {
+   "id": "z4-02",
+   "zone": 4,
+   "index": 2,
+   "name": "Drumbeat Depot",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.41,
+   "y": 0.22
+  },
+  {
+   "id": "z4-03",
+   "zone": 4,
+   "index": 3,
+   "name": "Railyard Rumble",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.47,
+   "y": 0.15
+  },
+  {
+   "id": "z4-04",
+   "zone": 4,
+   "index": 4,
+   "name": "Megaphone Mill",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.53,
+   "y": 0.22
+  },
+  {
+   "id": "z4-05",
+   "zone": 4,
+   "index": 5,
+   "name": "Pipeworks",
+   "mode": "timeTrial",
+   "boss": false,
+   "x": 0.58,
+   "y": 0.3
+  },
+  {
+   "id": "z4-06",
+   "zone": 4,
+   "index": 6,
+   "name": "Sludge Sluice",
+   "mode": "puzzle",
+   "boss": false,
+   "x": 0.64,
+   "y": 0.24
+  },
+  {
+   "id": "z4-07",
+   "zone": 4,
+   "index": 7,
+   "name": "Night Shift",
+   "mode": "suddenDeath",
+   "boss": false,
+   "x": 0.66,
+   "y": 0.14
+  },
+  {
+   "id": "z4-08",
+   "zone": 4,
+   "index": 8,
+   "name": "Smogmother's Stacks",
+   "mode": "standard",
+   "boss": true,
+   "x": 0.72,
+   "y": 0.2
+  },
+  {
+   "id": "z5-01",
+   "zone": 5,
+   "index": 1,
+   "name": "Cinder Steps",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.78,
+   "y": 0.3
+  },
+  {
+   "id": "z5-02",
+   "zone": 5,
+   "index": 2,
+   "name": "Ashfall Terrace",
+   "mode": "timeTrial",
+   "boss": false,
+   "x": 0.73,
+   "y": 0.4
+  },
+  {
+   "id": "z5-03",
+   "zone": 5,
+   "index": 3,
+   "name": "Three Craters",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.78,
+   "y": 0.49
+  },
+  {
+   "id": "z5-04",
+   "zone": 5,
+   "index": 4,
+   "name": "Obsidian Knot",
+   "mode": "puzzle",
+   "boss": false,
+   "x": 0.84,
+   "y": 0.56
+  },
+  {
+   "id": "z5-05",
+   "zone": 5,
+   "index": 5,
+   "name": "Magma Tunnels",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.79,
+   "y": 0.65
+  },
+  {
+   "id": "z5-06",
+   "zone": 5,
+   "index": 6,
+   "name": "Eruption",
+   "mode": "suddenDeath",
+   "boss": false,
+   "x": 0.86,
+   "y": 0.73
+  },
+  {
+   "id": "z5-07",
+   "zone": 5,
+   "index": 7,
+   "name": "The Last Roundabout",
+   "mode": "standard",
+   "boss": false,
+   "x": 0.93,
+   "y": 0.62
+  },
+  {
+   "id": "z5-08",
+   "zone": 5,
+   "index": 8,
+   "name": "Bluster's Last Stand",
+   "mode": "standard",
+   "boss": true,
+   "x": 0.91,
+   "y": 0.4
+  }
+ ]
+}

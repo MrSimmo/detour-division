@@ -1,0 +1,211 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z5-06",
+ "zone": 5,
+ "index": 6,
+ "name": "Eruption",
+ "mode": "suddenDeath",
+ "seed": 506,
+ "grid": {
+  "cols": 22,
+  "rows": 14
+ },
+ "tiles": [
+  "......................",
+  "......................",
+  ".................#....",
+  "...#..................",
+  "......................",
+  ".........####.........",
+  ".........####.........",
+  ".........####.........",
+  ".........####.........",
+  "......................",
+  "..................#...",
+  "....#.................",
+  "......................",
+  "......................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 6,
+    "to": 8
+   }
+  },
+  {
+   "id": "B",
+   "entrance": {
+    "edge": "N",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 6,
+    "to": 8
+   }
+  }
+ ],
+ "lives": 5,
+ "startCash": 480,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "sparkplug",
+   "sunbeam"
+  ]
+ },
+ "waves": {
+  "count": [
+   32,
+   37,
+   42
+  ],
+  "interval": 15,
+  "recipe": {
+   "b0": 6,
+   "g": 1.045,
+   "airEvery": 6,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "brolly",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 4,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 4,
+     "weight": 1
+    },
+    {
+     "enemy": "tubthumper",
+     "from": 5,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 6,
+     "weight": 2
+    },
+    {
+     "enemy": "sawbones",
+     "from": 7,
+     "weight": 1
+    }
+   ],
+   "hp": 0.325
+  },
+  "overrides": [
+   {
+    "wave": 1,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 6
+     }
+    ]
+   },
+   {
+    "wave": 2,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 8
+     }
+    ]
+   },
+   {
+    "wave": 12,
+    "groups": [
+     {
+      "enemy": "tinkettle",
+      "count": 1
+     },
+     {
+      "enemy": "flattener",
+      "count": 1,
+      "delay": 4
+     }
+    ]
+   },
+   {
+    "wave": 20,
+    "groups": [
+     {
+      "enemy": "tinkettle",
+      "count": 2
+     },
+     {
+      "enemy": "flattener",
+      "count": 1,
+      "delay": 4
+     }
+    ]
+   },
+   {
+    "wave": 28,
+    "groups": [
+     {
+      "enemy": "tinkettle",
+      "count": 3
+     },
+     {
+      "enemy": "flattener",
+      "count": 1,
+      "delay": 4
+     }
+    ]
+   },
+   {
+    "wave": 36,
+    "groups": [
+     {
+      "enemy": "tinkettle",
+      "count": 4
+     },
+     {
+      "enemy": "flattener",
+      "count": 1,
+      "delay": 4
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "The mountain keeps coughing up Old Flatteners. One of those getting through costs five lives, and you haven't got five to spare."
+ ],
+ "modeParams": {
+  "timer": [
+   360,
+   450,
+   540
+  ]
+ }
+}

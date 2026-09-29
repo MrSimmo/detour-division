@@ -1,0 +1,29 @@
+{
+  "suddenDeath": {
+    "lives": [
+      5,
+      3,
+      1
+    ]
+  },
+  "puzzle": {
+    "lives": [
+      10,
+      5,
+      1
+    ]
+  },
+  "endless": {
+    "difficulty": "tough",
+    "eliteRampWaves": 30,
+    "bossEvery": 10,
+    "bosses": [
+      "flattener",
+      "dredger",
+      "grinder",
+      "smogmother",
+      "kerblam"
+    ],
+    "extraWaves": 200
+  }
+}

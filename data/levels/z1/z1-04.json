@@ -1,0 +1,335 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z1-04",
+ "zone": 1,
+ "index": 4,
+ "name": "Haybale Hollow",
+ "mode": "puzzle",
+ "seed": 104,
+ "grid": {
+  "cols": 18,
+  "rows": 11
+ },
+ "tiles": [
+  "..................",
+  "..................",
+  "..................",
+  "..................",
+  "..................",
+  "bbbbbbbbbbbbbbbbbb",
+  "..................",
+  "..................",
+  "..................",
+  "..................",
+  ".................."
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 7,
+    "to": 9
+   },
+   "exit": {
+    "edge": "E",
+    "from": 7,
+    "to": 9
+   }
+  }
+ ],
+ "lives": 10,
+ "startCash": 320,
+ "loadout": {
+  "fixed": [
+   "rattler",
+   "treacle"
+  ],
+  "bot": [
+   "rattler",
+   "treacle"
+  ]
+ },
+ "waves": {
+  "count": [
+   12,
+   12,
+   12
+  ],
+  "interval": 18,
+  "recipe": {
+   "b0": 1,
+   "g": 1,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 1
+    }
+   ]
+  },
+  "overrides": [
+   {
+    "wave": 1,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 4,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 2,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 6,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 3,
+    "groups": [
+     {
+      "enemy": "scarper",
+      "count": 4,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 4,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 7,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 5,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 5,
+      "delay": 0
+     },
+     {
+      "enemy": "scarper",
+      "count": 3,
+      "delay": 2
+     }
+    ]
+   },
+   {
+    "wave": 6,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 9,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 7,
+    "groups": [
+     {
+      "enemy": "scarper",
+      "count": 7,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 8,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 10,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 9,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 7,
+      "delay": 0
+     },
+     {
+      "enemy": "scarper",
+      "count": 5,
+      "delay": 2
+     }
+    ]
+   },
+   {
+    "wave": 10,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 12,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 11,
+    "groups": [
+     {
+      "enemy": "scarper",
+      "count": 9,
+      "delay": 0
+     }
+    ]
+   },
+   {
+    "wave": 12,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 10,
+      "delay": 0
+     },
+     {
+      "enemy": "scarper",
+      "count": 7,
+      "delay": 2
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "The bales can be cleared for a fee. The long way round is on the other side of them."
+ ],
+ "blockers": {
+  "clearCost": 20
+ },
+ "bot": {
+  "plan": [
+   {
+    "clear": {
+     "cx": 2,
+     "cy": 5
+    }
+   },
+   {
+    "clear": {
+     "cx": 15,
+     "cy": 5
+    }
+   },
+   {
+    "build": {
+     "tower": "rattler",
+     "cx": 8,
+     "cy": 6
+    }
+   },
+   {
+    "build": {
+     "tower": "rattler",
+     "cx": 8,
+     "cy": 7
+    }
+   },
+   {
+    "build": {
+     "tower": "rattler",
+     "cx": 8,
+     "cy": 8
+    }
+   },
+   {
+    "build": {
+     "tower": "rattler",
+     "cx": 8,
+     "cy": 9
+    }
+   },
+   {
+    "build": {
+     "tower": "rattler",
+     "cx": 8,
+     "cy": 10
+    }
+   },
+   {
+    "build": {
+     "tower": "treacle",
+     "cx": 3,
+     "cy": 3
+    }
+   },
+   {
+    "build": {
+     "tower": "rattler",
+     "cx": 5,
+     "cy": 3
+    }
+   },
+   {
+    "build": {
+     "tower": "rattler",
+     "cx": 7,
+     "cy": 3
+    }
+   },
+   {
+    "build": {
+     "tower": "rattler",
+     "cx": 9,
+     "cy": 3
+    }
+   },
+   {
+    "build": {
+     "tower": "rattler",
+     "cx": 11,
+     "cy": 3
+    }
+   },
+   {
+    "build": {
+     "tower": "treacle",
+     "cx": 13,
+     "cy": 3
+    }
+   },
+   {
+    "build": {
+     "tower": "rattler",
+     "cx": 6,
+     "cy": 1
+    }
+   },
+   {
+    "build": {
+     "tower": "rattler",
+     "cx": 10,
+     "cy": 1
+    }
+   },
+   {
+    "upgrade": {
+     "cx": 7,
+     "cy": 3
+    }
+   },
+   {
+    "upgrade": {
+     "cx": 9,
+     "cy": 3
+    }
+   }
+  ],
+  "generic": false
+ }
+}

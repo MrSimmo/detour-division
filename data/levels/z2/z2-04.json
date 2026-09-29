@@ -1,0 +1,128 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z2-04",
+ "zone": 2,
+ "index": 4,
+ "name": "Forked Mesa",
+ "mode": "standard",
+ "seed": 204,
+ "grid": {
+  "cols": 22,
+  "rows": 15
+ },
+ "tiles": [
+  "......................",
+  ".###..............###.",
+  ".###..............###.",
+  "......................",
+  "......#........#......",
+  "......................",
+  "......................",
+  "......................",
+  "......................",
+  "......................",
+  "......#........#......",
+  "......................",
+  ".###..............###.",
+  ".###..............###.",
+  "......................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 6,
+    "to": 8
+   },
+   "exit": {
+    "edge": "E",
+    "from": 6,
+    "to": 8
+   }
+  },
+  {
+   "id": "B",
+   "entrance": {
+    "edge": "N",
+    "from": 9,
+    "to": 11
+   },
+   "exit": {
+    "edge": "S",
+    "from": 10,
+    "to": 12
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 280,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "scorcher",
+   "sparkplug"
+  ]
+ },
+ "waves": {
+  "count": [
+   23,
+   28,
+   33
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 7.5,
+   "g": 1.0729,
+   "airEvery": 7,
+   "eliteFrom": 13,
+   "eliteEvery": 7,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "puttputt",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "scarper",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "brolly",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 4,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 5,
+     "weight": 2
+    },
+    {
+     "enemy": "lummox",
+     "from": 9,
+     "weight": 1
+    }
+   ],
+   "hp": 0.64
+  },
+  "overrides": []
+ },
+ "hints": [
+  "Two roads cross the mesa and leave by different gates. Build where both of them have to pass."
+ ]
+}

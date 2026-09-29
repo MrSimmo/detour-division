@@ -1,0 +1,200 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z4-08",
+ "zone": 4,
+ "index": 8,
+ "name": "Smogmother's Stacks",
+ "mode": "standard",
+ "seed": 408,
+ "grid": {
+  "cols": 22,
+  "rows": 13
+ },
+ "tiles": [
+  "..........##..........",
+  "..........##..........",
+  "....##................",
+  "....##................",
+  "......................",
+  "......................",
+  "..............>>>>>...",
+  "......................",
+  "......................",
+  "................##....",
+  "................##....",
+  "..........##..........",
+  "..........##.........."
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 320,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "sparkplug",
+   "sunbeam"
+  ]
+ },
+ "waves": {
+  "count": [
+   28,
+   33,
+   38
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 8,
+   "g": 1.0683,
+   "airEvery": 5,
+   "eliteFrom": 11,
+   "eliteEvery": 5,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "puttputt",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "brolly",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "sawbones",
+     "from": 4,
+     "weight": 1
+    },
+    {
+     "enemy": "gasbag",
+     "from": 7,
+     "weight": 1
+    },
+    {
+     "enemy": "lummox",
+     "from": 8,
+     "weight": 1
+    },
+    {
+     "enemy": "tubthumper",
+     "from": 2,
+     "weight": 1
+    }
+   ],
+   "hp": 0.64
+  },
+  "overrides": [
+   {
+    "wave": 28,
+    "difficulties": [
+     "casual"
+    ],
+    "groups": [
+     {
+      "enemy": "smogmother",
+      "count": 1,
+      "delay": 6
+     },
+     {
+      "enemy": "whirligig",
+      "count": 10
+     },
+     {
+      "enemy": "tinkettle",
+      "count": 4,
+      "delay": 4
+     }
+    ]
+   },
+   {
+    "wave": 33,
+    "difficulties": [
+     "tough"
+    ],
+    "groups": [
+     {
+      "enemy": "smogmother",
+      "count": 1,
+      "delay": 6
+     },
+     {
+      "enemy": "whirligig",
+      "count": 10
+     },
+     {
+      "enemy": "tinkettle",
+      "count": 4,
+      "delay": 4
+     }
+    ]
+   },
+   {
+    "wave": 38,
+    "difficulties": [
+     "heroic"
+    ],
+    "groups": [
+     {
+      "enemy": "smogmother",
+      "count": 1,
+      "delay": 6
+     },
+     {
+      "enemy": "whirligig",
+      "count": 10
+     },
+     {
+      "enemy": "tinkettle",
+      "count": 4,
+      "delay": 4
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "The Smogmother flies straight over your maze, dropping Tin Kettles as she goes. You need anti-air along her line, and guns for what she drops."
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z5-01",
+ "zone": 5,
+ "index": 1,
+ "name": "Cinder Steps",
+ "mode": "standard",
+ "seed": 501,
+ "grid": {
+  "cols": 24,
+  "rows": 13
+ },
+ "tiles": [
+  ".......~~......~~.......",
+  ".......~~......~~.......",
+  ".......==..#...~~.......",
+  "...#...~~......~~.......",
+  ".......~~......~~.......",
+  ".......~~......~~.......",
+  ".......~~......==.......",
+  ".......~~......~~.......",
+  ".......~~......~~.......",
+  ".......~~......~~...#...",
+  ".......==...#..~~.......",
+  ".......~~......~~.......",
+  ".......~~......~~......."
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 320,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "sparkplug",
+   "sunbeam"
+  ]
+ },
+ "waves": {
+  "count": [
+   27,
+   32,
+   37
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 8,
+   "g": 1.0683,
+   "airEvery": 7,
+   "eliteFrom": 10,
+   "eliteEvery": 5,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "puttputt",
+     "from": 1,
+     "weight": 1
+    },
+    {
+     "enemy": "brolly",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 1,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "sawbones",
+     "from": 3,
+     "weight": 1
+    },
+    {
+     "enemy": "tubthumper",
+     "from": 3,
+     "weight": 1
+    },
+    {
+     "enemy": "gasbag",
+     "from": 6,
+     "weight": 1
+    },
+    {
+     "enemy": "lummox",
+     "from": 7,
+     "weight": 1
+    }
+   ],
+   "hp": 0.894
+  },
+  "overrides": []
+ },
+ "hints": [
+  "Nothing on foot crosses lava. Every bridge is a chokepoint, and every bank between them is room for a maze."
+ ]
+}

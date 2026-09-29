@@ -1,0 +1,5 @@
+{
+  "iceSpeed": 1.35,
+  "conveyorPush": 0.6,
+  "conveyorCost": { "along": 0.6, "against": 1.8, "across": 1 }
+}

@@ -1,0 +1,427 @@
+{
+  "footling": {
+    "name": "Footling",
+    "hp": 50,
+    "speed": 1.0,
+    "armour": 0,
+    "radius": 0.2,
+    "bounty": 2,
+    "threat": 1,
+    "turnRate": 360,
+    "spacing": 0.7,
+    "elite": {
+      "name": "Veteran Footling",
+      "armour": 2
+    }
+  },
+  "scarper": {
+    "name": "Scarper",
+    "hp": 35,
+    "speed": 1.9,
+    "armour": 0,
+    "radius": 0.18,
+    "bounty": 2,
+    "threat": 1.2,
+    "turnRate": 420,
+    "spacing": 0.5,
+    "elite": {
+      "name": "Sprinter",
+      "speed": 2.2,
+      "traits": {
+        "sprint": {
+          "mul": 1.5,
+          "dur": 2
+        }
+      }
+    }
+  },
+  "puttputt": {
+    "name": "Putt-Putt",
+    "hp": 20,
+    "speed": 2.8,
+    "armour": 0,
+    "radius": 0.22,
+    "bounty": 1,
+    "threat": 0.6,
+    "turnRate": 300,
+    "spacing": 0.35,
+    "pack": [
+      6,
+      10
+    ],
+    "elite": {
+      "name": "Crash Helmet",
+      "armour": 2
+    }
+  },
+  "tinkettle": {
+    "name": "Tin Kettle",
+    "hp": 180,
+    "speed": 0.75,
+    "armour": 6,
+    "radius": 0.3,
+    "bounty": 6,
+    "threat": 4,
+    "turnRate": 200,
+    "spacing": 1.4,
+    "vuln": {
+      "fire": 1.25
+    },
+    "elite": {
+      "name": "Boilerplate",
+      "armour": 10,
+      "traits": {
+        "dash": {
+          "below": 0.5,
+          "mul": 1.4
+        }
+      }
+    },
+    "heavy": true
+  },
+  "whirligig": {
+    "name": "Whirligig",
+    "hp": 45,
+    "speed": 1.8,
+    "armour": 0,
+    "radius": 0.25,
+    "bounty": 3,
+    "threat": 1.5,
+    "air": true,
+    "turnRate": 360,
+    "spacing": 0.6,
+    "elite": {
+      "name": "Ace",
+      "armour": 1
+    }
+  },
+  "lummox": {
+    "name": "Big Lummox",
+    "hp": 400,
+    "speed": 0.55,
+    "armour": 2,
+    "radius": 0.35,
+    "bounty": 10,
+    "threat": 8,
+    "turnRate": 180,
+    "spacing": 2,
+    "heavy": true,
+    "slowResist": 0.5,
+    "stunResist": 0.5,
+    "elite": {
+      "name": "Colossal Lummox",
+      "immune": [
+        "reverse",
+        "bubble"
+      ]
+    }
+  },
+  "brolly": {
+    "name": "Brolly Guard",
+    "hp": 60,
+    "shield": 60,
+    "shieldRegen": 20,
+    "shieldDelay": 3,
+    "speed": 0.9,
+    "radius": 0.24,
+    "bounty": 4,
+    "threat": 2.5,
+    "turnRate": 300,
+    "spacing": 0.9,
+    "elite": {
+      "name": "Storm Brolly",
+      "shield": 120,
+      "shieldDelay": 2
+    }
+  },
+  "sawbones": {
+    "name": "Sawbones",
+    "hp": 80,
+    "speed": 0.9,
+    "radius": 0.2,
+    "bounty": 5,
+    "threat": 3,
+    "turnRate": 330,
+    "spacing": 1.2,
+    "traits": {
+      "heal": {
+        "every": 2,
+        "radius": 1.5,
+        "pct": 0.08,
+        "bossPct": 0.02
+      }
+    },
+    "elite": {
+      "name": "Surgeon-General",
+      "traits": {
+        "heal": {
+          "every": 2,
+          "radius": 1.5,
+          "pct": 0.12,
+          "bossPct": 0.02,
+          "cleanse": true
+        }
+      }
+    }
+  },
+  "trio": {
+    "name": "Trenchcoat Trio",
+    "hp": 150,
+    "speed": 0.85,
+    "armour": 1,
+    "radius": 0.26,
+    "bounty": 4,
+    "threat": 4,
+    "turnRate": 280,
+    "spacing": 1.3,
+    "traits": {
+      "split": {
+        "into": "tiddler",
+        "count": 3
+      }
+    },
+    "elite": {
+      "name": "Greatcoat Trio"
+    }
+  },
+  "tiddler": {
+    "name": "Tiddler",
+    "hp": 30,
+    "speed": 1.4,
+    "radius": 0.15,
+    "bounty": 1,
+    "threat": 0.5,
+    "turnRate": 420,
+    "spacing": 0.4,
+    "elite": {
+      "name": "Elite Tiddler",
+      "hpMul": 2,
+      "armour": 1
+    }
+  },
+  "tubthumper": {
+    "name": "Tub-Thumper",
+    "hp": 90,
+    "speed": 1.0,
+    "armour": 1,
+    "radius": 0.22,
+    "bounty": 5,
+    "threat": 3,
+    "turnRate": 330,
+    "spacing": 1.2,
+    "traits": {
+      "aura": {
+        "radius": 1.5,
+        "speed": 0.25
+      }
+    },
+    "elite": {
+      "name": "Bandmaster",
+      "traits": {
+        "aura": {
+          "radius": 1.5,
+          "speed": 0.35,
+          "armour": 1
+        }
+      }
+    }
+  },
+  "gasbag": {
+    "name": "Gasbag",
+    "hp": 500,
+    "speed": 0.45,
+    "armour": 3,
+    "radius": 0.45,
+    "air": true,
+    "bounty": 12,
+    "threat": 10,
+    "turnRate": 90,
+    "spacing": 3,
+    "heavy": true,
+    "elite": {
+      "name": "Dreadnought",
+      "hpMul": 2.2,
+      "traits": {
+        "release": {
+          "type": "whirligig",
+          "count": 2
+        }
+      }
+    }
+  },
+  "flattener": {
+    "name": "Old Flattener",
+    "hp": 3000,
+    "speed": 0.4,
+    "armour": 4,
+    "radius": 0.5,
+    "bounty": 150,
+    "threat": 40,
+    "leak": 5,
+    "turnRate": 90,
+    "spacing": 3,
+    "boss": true,
+    "heavy": true,
+    "immune": [
+      "stun",
+      "freeze",
+      "reverse",
+      "bubble"
+    ],
+    "traits": {
+      "burst": {
+        "below": 0.5,
+        "speed": 0.6,
+        "dur": 5
+      }
+    },
+    "elite": {
+      "name": "Old Flattener",
+      "hpMul": 1,
+      "bountyMul": 1,
+      "threatMul": 1
+    }
+  },
+  "dredger": {
+    "name": "Dune Dredger",
+    "hp": 5000,
+    "speed": 0.45,
+    "armour": 3,
+    "radius": 0.55,
+    "bounty": 220,
+    "threat": 55,
+    "leak": 5,
+    "turnRate": 80,
+    "spacing": 3,
+    "boss": true,
+    "heavy": true,
+    "immune": [
+      "stun",
+      "freeze",
+      "reverse",
+      "bubble"
+    ],
+    "traits": {
+      "spawner": {
+        "type": "puttputt",
+        "count": 2,
+        "every": 6
+      }
+    },
+    "elite": {
+      "name": "Dune Dredger",
+      "hpMul": 1,
+      "bountyMul": 1,
+      "threatMul": 1
+    }
+  },
+  "grinder": {
+    "name": "Glacier Grinder",
+    "hp": 7000,
+    "speed": 0.4,
+    "armour": 5,
+    "radius": 0.55,
+    "bounty": 300,
+    "threat": 70,
+    "leak": 5,
+    "turnRate": 80,
+    "spacing": 3,
+    "boss": true,
+    "heavy": true,
+    "immune": [
+      "stun",
+      "freeze",
+      "reverse",
+      "bubble"
+    ],
+    "traits": {
+      "iceShield": {
+        "hp": 2000,
+        "regrow": 8,
+        "stun": 2
+      }
+    },
+    "elite": {
+      "name": "Glacier Grinder",
+      "hpMul": 1,
+      "bountyMul": 1,
+      "threatMul": 1
+    }
+  },
+  "smogmother": {
+    "name": "Smogmother",
+    "hp": 9000,
+    "speed": 0.35,
+    "armour": 4,
+    "radius": 0.6,
+    "air": true,
+    "bounty": 380,
+    "threat": 85,
+    "leak": 5,
+    "turnRate": 60,
+    "spacing": 3,
+    "boss": true,
+    "heavy": true,
+    "immune": [
+      "stun",
+      "freeze",
+      "reverse",
+      "bubble"
+    ],
+    "traits": {
+      "dropper": {
+        "type": "tinkettle",
+        "every": 8
+      }
+    },
+    "elite": {
+      "name": "Smogmother",
+      "hpMul": 1,
+      "bountyMul": 1,
+      "threatMul": 1
+    }
+  },
+  "kerblam": {
+    "name": "Kerblam Mech",
+    "hp": 16000,
+    "speed": 0.45,
+    "armour": 6,
+    "radius": 0.6,
+    "bounty": 600,
+    "threat": 150,
+    "leak": 5,
+    "turnRate": 90,
+    "spacing": 3,
+    "boss": true,
+    "heavy": true,
+    "immune": [
+      "stun",
+      "freeze",
+      "reverse",
+      "bubble"
+    ],
+    "traits": {
+      "phases": [
+        {
+          "below": 0.66,
+          "spawner": {
+            "type": "whirligig",
+            "count": 3,
+            "every": 10
+          }
+        },
+        {
+          "below": 0.33,
+          "armour": 0,
+          "speed": 0.7
+        }
+      ]
+    },
+    "elite": {
+      "name": "Kerblam Mech",
+      "hpMul": 1,
+      "bountyMul": 1,
+      "threatMul": 1
+    }
+  }
+}

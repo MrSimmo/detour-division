@@ -1,0 +1,519 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z3-06",
+ "zone": 3,
+ "index": 6,
+ "name": "Bubble Pass",
+ "mode": "standard",
+ "seed": 306,
+ "grid": {
+  "cols": 22,
+  "rows": 13
+ },
+ "tiles": [
+  "......##########......",
+  "........######........",
+  "......................",
+  "...#..................",
+  "......................",
+  "......................",
+  "..........#...........",
+  "......................",
+  "......................",
+  "..................#...",
+  "......................",
+  "........######........",
+  "......##########......"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 290,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "icebox",
+   "bubbler"
+  ]
+ },
+ "waves": {
+  "count": [
+   25,
+   30,
+   35
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 7.5,
+   "g": 1.0683,
+   "airEvery": 6,
+   "eliteFrom": 12,
+   "eliteEvery": 6,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "puttputt",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "brolly",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 4,
+     "weight": 2
+    },
+    {
+     "enemy": "lummox",
+     "from": 9,
+     "weight": 1
+    },
+    {
+     "enemy": "sawbones",
+     "from": 3,
+     "weight": 1
+    },
+    {
+     "enemy": "gasbag",
+     "from": 6,
+     "weight": 1
+    }
+   ],
+   "hp": 0.8
+  },
+  "overrides": [
+   {
+    "wave": 10,
+    "groups": [
+     {
+      "enemy": "trio",
+      "count": 2,
+      "elite": false
+     },
+     {
+      "enemy": "whirligig",
+      "count": 3,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 11,
+    "groups": [
+     {
+      "enemy": "tinkettle",
+      "count": 2,
+      "elite": false
+     },
+     {
+      "enemy": "gasbag",
+      "count": 1,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 12,
+    "groups": [
+     {
+      "enemy": "sawbones",
+      "count": 3,
+      "elite": false
+     },
+     {
+      "enemy": "whirligig",
+      "count": 3,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 13,
+    "groups": [
+     {
+      "enemy": "lummox",
+      "count": 1,
+      "elite": false
+     },
+     {
+      "enemy": "whirligig",
+      "count": 4,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 14,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 9,
+      "elite": false
+     },
+     {
+      "enemy": "gasbag",
+      "count": 1,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 15,
+    "groups": [
+     {
+      "enemy": "trio",
+      "count": 2,
+      "elite": false
+     },
+     {
+      "enemy": "whirligig",
+      "count": 4,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 16,
+    "groups": [
+     {
+      "enemy": "scarper",
+      "count": 8,
+      "elite": false
+     },
+     {
+      "enemy": "whirligig",
+      "count": 4,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 17,
+    "groups": [
+     {
+      "enemy": "sawbones",
+      "count": 4,
+      "elite": true
+     },
+     {
+      "enemy": "whirligig",
+      "count": 5,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 18,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 11,
+      "elite": false
+     },
+     {
+      "enemy": "whirligig",
+      "count": 5,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 19,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 12,
+      "elite": true
+     },
+     {
+      "enemy": "gasbag",
+      "count": 1,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 20,
+    "groups": [
+     {
+      "enemy": "brolly",
+      "count": 5,
+      "elite": false
+     },
+     {
+      "enemy": "whirligig",
+      "count": 6,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 21,
+    "groups": [
+     {
+      "enemy": "scarper",
+      "count": 12,
+      "elite": true
+     },
+     {
+      "enemy": "whirligig",
+      "count": 6,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 22,
+    "groups": [
+     {
+      "enemy": "tinkettle",
+      "count": 4,
+      "elite": false
+     },
+     {
+      "enemy": "gasbag",
+      "count": 1,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 23,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 16,
+      "elite": true
+     },
+     {
+      "enemy": "whirligig",
+      "count": 7,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 24,
+    "groups": [
+     {
+      "enemy": "lummox",
+      "count": 2,
+      "elite": false
+     },
+     {
+      "enemy": "whirligig",
+      "count": 7,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 25,
+    "groups": [
+     {
+      "enemy": "brolly",
+      "count": 7,
+      "elite": true
+     },
+     {
+      "enemy": "whirligig",
+      "count": 8,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 26,
+    "groups": [
+     {
+      "enemy": "trio",
+      "count": 5,
+      "elite": false
+     },
+     {
+      "enemy": "whirligig",
+      "count": 9,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 27,
+    "groups": [
+     {
+      "enemy": "tinkettle",
+      "count": 5,
+      "elite": true
+     },
+     {
+      "enemy": "gasbag",
+      "count": 1,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 28,
+    "groups": [
+     {
+      "enemy": "sawbones",
+      "count": 7,
+      "elite": false
+     },
+     {
+      "enemy": "whirligig",
+      "count": 10,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 29,
+    "groups": [
+     {
+      "enemy": "lummox",
+      "count": 3,
+      "elite": true
+     },
+     {
+      "enemy": "whirligig",
+      "count": 11,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 30,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 25,
+      "elite": false
+     },
+     {
+      "enemy": "gasbag",
+      "count": 2,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 31,
+    "groups": [
+     {
+      "enemy": "trio",
+      "count": 7,
+      "elite": true
+     },
+     {
+      "enemy": "whirligig",
+      "count": 12,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 32,
+    "groups": [
+     {
+      "enemy": "scarper",
+      "count": 24,
+      "elite": false
+     },
+     {
+      "enemy": "whirligig",
+      "count": 13,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 33,
+    "groups": [
+     {
+      "enemy": "sawbones",
+      "count": 10,
+      "elite": true
+     },
+     {
+      "enemy": "whirligig",
+      "count": 14,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 34,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 33,
+      "elite": false
+     },
+     {
+      "enemy": "whirligig",
+      "count": 14,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 35,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 36,
+      "elite": true
+     },
+     {
+      "enemy": "gasbag",
+      "count": 2,
+      "delay": 3
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "A Bubbler floats its target off the ground for a moment. That works on fliers too, which bob helplessly in place."
+ ]
+}

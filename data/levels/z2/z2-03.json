@@ -1,0 +1,123 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z2-03",
+ "zone": 2,
+ "index": 3,
+ "name": "Brolly Pass",
+ "mode": "standard",
+ "seed": 203,
+ "grid": {
+  "cols": 24,
+  "rows": 13
+ },
+ "tiles": [
+  "########################",
+  "##..####...####..####.##",
+  ".....##.....##.....#....",
+  "........................",
+  "........................",
+  "................#.......",
+  "........#...............",
+  "........................",
+  "........................",
+  "........................",
+  "....##....##.....#......",
+  "#..####..####...###..###",
+  "########################"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 250,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "scorcher",
+   "sparkplug"
+  ]
+ },
+ "waves": {
+  "count": [
+   23,
+   28,
+   33
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 7,
+   "g": 1.0729,
+   "airEvery": 7,
+   "eliteFrom": 13,
+   "eliteEvery": 7,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "puttputt",
+     "from": 1,
+     "weight": 1
+    },
+    {
+     "enemy": "scarper",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "brolly",
+     "from": 3,
+     "weight": 3
+    },
+    {
+     "enemy": "whirligig",
+     "from": 4,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 6,
+     "weight": 2
+    },
+    {
+     "enemy": "lummox",
+     "from": 10,
+     "weight": 1
+    }
+   ],
+   "hp": 1.25
+  },
+  "overrides": [
+   {
+    "wave": 3,
+    "groups": [
+     {
+      "enemy": "brolly",
+      "count": 5
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "Brolly Guards hide behind a shield that soaks up bullets. A Sparkplug's shock shorts it out in one go."
+ ]
+}

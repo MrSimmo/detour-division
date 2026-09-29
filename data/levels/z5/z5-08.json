@@ -1,0 +1,214 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z5-08",
+ "zone": 5,
+ "index": 8,
+ "name": "Bluster's Last Stand",
+ "mode": "standard",
+ "seed": 508,
+ "grid": {
+  "cols": 24,
+  "rows": 14
+ },
+ "tiles": [
+  "........................",
+  "........................",
+  "........................",
+  ".....##.................",
+  ".....##.................",
+  "........................",
+  "...........##...........",
+  "...........##...........",
+  "........................",
+  ".................##.....",
+  ".................##.....",
+  "........................",
+  "........~~~~~~~~........",
+  "........................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  },
+  {
+   "id": "B",
+   "entrance": {
+    "edge": "N",
+    "from": 10,
+    "to": 12
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 380,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "sparkplug",
+   "sunbeam"
+  ]
+ },
+ "waves": {
+  "count": [
+   30,
+   35,
+   40
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 8.5,
+   "g": 1.0637,
+   "airEvery": 6,
+   "eliteFrom": 10,
+   "eliteEvery": 5,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "puttputt",
+     "from": 1,
+     "weight": 1
+    },
+    {
+     "enemy": "brolly",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 1,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "sawbones",
+     "from": 3,
+     "weight": 1
+    },
+    {
+     "enemy": "tubthumper",
+     "from": 3,
+     "weight": 1
+    },
+    {
+     "enemy": "gasbag",
+     "from": 6,
+     "weight": 1
+    },
+    {
+     "enemy": "lummox",
+     "from": 7,
+     "weight": 1
+    }
+   ],
+   "hp": 0.572
+  },
+  "overrides": [
+   {
+    "wave": 30,
+    "difficulties": [
+     "casual"
+    ],
+    "groups": [
+     {
+      "enemy": "kerblam",
+      "count": 1,
+      "delay": 6
+     },
+     {
+      "enemy": "lummox",
+      "count": 2
+     },
+     {
+      "enemy": "whirligig",
+      "count": 10,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 35,
+    "difficulties": [
+     "tough"
+    ],
+    "groups": [
+     {
+      "enemy": "kerblam",
+      "count": 1,
+      "delay": 6
+     },
+     {
+      "enemy": "lummox",
+      "count": 2
+     },
+     {
+      "enemy": "whirligig",
+      "count": 10,
+      "delay": 3
+     }
+    ]
+   },
+   {
+    "wave": 40,
+    "difficulties": [
+     "heroic"
+    ],
+    "groups": [
+     {
+      "enemy": "kerblam",
+      "count": 1,
+      "delay": 6
+     },
+     {
+      "enemy": "lummox",
+      "count": 2
+     },
+     {
+      "enemy": "whirligig",
+      "count": 10,
+      "delay": 3
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "General Bluster's Kerblam Mech. First it calls in fliers, then it sheds its armour and charges. Don't stop shooting."
+ ]
+}

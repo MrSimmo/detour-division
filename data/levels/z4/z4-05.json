@@ -1,0 +1,161 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z4-05",
+ "zone": 4,
+ "index": 5,
+ "name": "Pipeworks",
+ "mode": "timeTrial",
+ "seed": 405,
+ "grid": {
+  "cols": 24,
+  "rows": 13
+ },
+ "tiles": [
+  "...###.......###..###...",
+  "...#o#.......#o#..#o#...",
+  "........................",
+  "........................",
+  "........................",
+  "........................",
+  "........................",
+  "........................",
+  ".....................##.",
+  ".....................o#.",
+  ".....................##.",
+  "........#o#.#o#.........",
+  "........###.###........."
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 4,
+    "to": 6
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 330,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "sparkplug",
+   "teaurn"
+  ]
+ },
+ "waves": {
+  "count": [
+   34,
+   39,
+   44
+  ],
+  "interval": 12,
+  "recipe": {
+   "b0": 9,
+   "g": 1.04,
+   "airEvery": 6,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "puttputt",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "scarper",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "brolly",
+     "from": 3,
+     "weight": 1
+    },
+    {
+     "enemy": "tubthumper",
+     "from": 4,
+     "weight": 1
+    },
+    {
+     "enemy": "whirligig",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 6,
+     "weight": 1
+    }
+   ],
+   "hp": 0.633
+  }
+ },
+ "hints": [
+  "Three old pipes run under the works. Anything in a pipe can't be hit, and the clock doesn't wait."
+ ],
+ "modeParams": {
+  "timer": [
+   360,
+   360,
+   360
+  ],
+  "target": [
+   260,
+   320,
+   380
+  ]
+ },
+ "tunnels": [
+  {
+   "a": [
+    4,
+    1
+   ],
+   "b": [
+    13,
+    11
+   ],
+   "length": 6
+  },
+  {
+   "a": [
+    9,
+    11
+   ],
+   "b": [
+    19,
+    1
+   ],
+   "length": 6
+  },
+  {
+   "a": [
+    14,
+    1
+   ],
+   "b": [
+    21,
+    9
+   ],
+   "length": 6
+  }
+ ]
+}

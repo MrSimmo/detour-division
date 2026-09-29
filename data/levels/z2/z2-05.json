@@ -1,0 +1,131 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z2-05",
+ "zone": 2,
+ "index": 5,
+ "name": "Sandglass",
+ "mode": "suddenDeath",
+ "seed": 205,
+ "grid": {
+  "cols": 24,
+  "rows": 13
+ },
+ "tiles": [
+  ".........######.........",
+  ".........######.........",
+  "..........####..........",
+  "...........##...........",
+  "........................",
+  "........................",
+  "........................",
+  "........................",
+  "........................",
+  "...........##...........",
+  "..........####..........",
+  ".........######.........",
+  ".........######........."
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 5,
+ "startCash": 300,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "scorcher",
+   "sparkplug"
+  ]
+ },
+ "waves": {
+  "count": [
+   32,
+   37,
+   42
+  ],
+  "interval": 15,
+  "recipe": {
+   "b0": 6,
+   "g": 1.05,
+   "airEvery": 6,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "puttputt",
+     "from": 6,
+     "weight": 2
+    },
+    {
+     "enemy": "brolly",
+     "from": 5,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 4,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 8,
+     "weight": 2
+    }
+   ],
+   "hp": 0.836
+  },
+  "overrides": [
+   {
+    "wave": 1,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 6
+     }
+    ]
+   },
+   {
+    "wave": 2,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 8
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "Hold out until the sand runs through. Every leak counts, and there aren't many to spare."
+ ],
+ "modeParams": {
+  "timer": [
+   240,
+   300,
+   360
+  ]
+ }
+}

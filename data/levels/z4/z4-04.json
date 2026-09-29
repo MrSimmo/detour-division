@@ -1,0 +1,133 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z4-04",
+ "zone": 4,
+ "index": 4,
+ "name": "Megaphone Mill",
+ "mode": "standard",
+ "seed": 404,
+ "grid": {
+  "cols": 24,
+  "rows": 13
+ },
+ "tiles": [
+  "........................",
+  "........#...............",
+  "........................",
+  "........................",
+  "####################....",
+  "........................",
+  "............#...........",
+  "........................",
+  "....####################",
+  "........................",
+  "........................",
+  "...............#........",
+  "........................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 1,
+    "to": 3
+   },
+   "exit": {
+    "edge": "E",
+    "from": 9,
+    "to": 11
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 320,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "sparkplug",
+   "bellower"
+  ]
+ },
+ "waves": {
+  "count": [
+   27,
+   32,
+   37
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 8,
+   "g": 1.0683,
+   "airEvery": 7,
+   "eliteFrom": 11,
+   "eliteEvery": 5,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "puttputt",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "brolly",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "sawbones",
+     "from": 4,
+     "weight": 1
+    },
+    {
+     "enemy": "gasbag",
+     "from": 7,
+     "weight": 1
+    },
+    {
+     "enemy": "lummox",
+     "from": 8,
+     "weight": 1
+    },
+    {
+     "enemy": "tubthumper",
+     "from": 2,
+     "weight": 1
+    }
+   ],
+   "hp": 1
+  },
+  "overrides": []
+ },
+ "hints": [
+  "A Bellower's blast turns everything in front of it round and sends it back the way it came. Long halls give it room to work."
+ ]
+}

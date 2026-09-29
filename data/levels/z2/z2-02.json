@@ -1,0 +1,120 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z2-02",
+ "zone": 2,
+ "index": 2,
+ "name": "Mineshaft Gulch",
+ "mode": "standard",
+ "seed": 202,
+ "grid": {
+  "cols": 22,
+  "rows": 13
+ },
+ "tiles": [
+  "......................",
+  "....###...............",
+  "....#o#...............",
+  "......................",
+  "......................",
+  "..........##..........",
+  "......................",
+  "......................",
+  "...........##.........",
+  "......................",
+  "...............#o#....",
+  "...............###....",
+  "......................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 4,
+    "to": 6
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 240,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "scorcher"
+  ]
+ },
+ "waves": {
+  "count": [
+   23,
+   28,
+   33
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 7,
+   "g": 1.0729,
+   "airEvery": 7,
+   "eliteFrom": 13,
+   "eliteEvery": 7,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "puttputt",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "scarper",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 4,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 5,
+     "weight": 2
+    },
+    {
+     "enemy": "lummox",
+     "from": 9,
+     "weight": 1
+    }
+   ],
+   "hp": 0.8
+  },
+  "overrides": []
+ },
+ "hints": [
+  "Nobody can build in the old mine, and anything down there can't be shot. If your maze gets longer than the tunnel, they'll take the tunnel. Make both ways long."
+ ],
+ "tunnels": [
+  {
+   "a": [
+    5,
+    2
+   ],
+   "b": [
+    16,
+    10
+   ],
+   "length": 7
+  }
+ ]
+}

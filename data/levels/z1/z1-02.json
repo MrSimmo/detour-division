@@ -1,0 +1,98 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z1-02",
+ "zone": 1,
+ "index": 2,
+ "name": "Treacle Tart Farm",
+ "mode": "standard",
+ "seed": 102,
+ "grid": {
+  "cols": 22,
+  "rows": 15
+ },
+ "tiles": [
+  "......................",
+  "..##..............##..",
+  "..#................#..",
+  "......................",
+  "......##..............",
+  "..............##......",
+  "......................",
+  "......................",
+  "......................",
+  "...##.................",
+  "............##........",
+  "......................",
+  "......................",
+  "..##..............##..",
+  "......................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "N",
+    "from": 10,
+    "to": 12
+   },
+   "exit": {
+    "edge": "S",
+    "from": 9,
+    "to": 11
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 200,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle"
+  ]
+ },
+ "waves": {
+  "count": [
+   20,
+   25,
+   30
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 4.5,
+   "g": 1.0759,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 4,
+     "weight": 1
+    }
+   ],
+   "hp": 1.25
+  },
+  "overrides": [
+   {
+    "wave": 3,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 5
+     },
+     {
+      "enemy": "scarper",
+      "count": 3,
+      "delay": 4
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "Scarpers outrun an ordinary maze. Treacle slows them where your guns are thickest."
+ ]
+}

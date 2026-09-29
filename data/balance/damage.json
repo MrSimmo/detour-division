@@ -1,0 +1,40 @@
+{
+  "types": {
+    "kinetic": {
+      "pen": 0,
+      "shieldMul": 1
+    },
+    "explosive": {
+      "pen": 0.3,
+      "shieldMul": 1
+    },
+    "fire": {
+      "pen": 1,
+      "shieldMul": 0.5
+    },
+    "shock": {
+      "pen": 0.5,
+      "shieldMul": 2
+    },
+    "beam": {
+      "pen": 0.5,
+      "shieldMul": 1
+    },
+    "cold": {
+      "pen": 1,
+      "shieldMul": 1
+    }
+  },
+  "minChip": 0.15,
+  "coverMul": 0.6,
+  "directFire": [
+    "kinetic",
+    "beam",
+    "shock"
+  ],
+  "status": {
+    "freezeImmune": 1.5,
+    "burnStacks": 3,
+    "bossSlowCap": 0.3
+  }
+}

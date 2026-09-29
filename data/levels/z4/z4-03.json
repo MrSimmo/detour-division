@@ -1,0 +1,147 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z4-03",
+ "zone": 4,
+ "index": 3,
+ "name": "Railyard Rumble",
+ "mode": "standard",
+ "seed": 403,
+ "grid": {
+  "cols": 24,
+  "rows": 14
+ },
+ "tiles": [
+  "...........~~...........",
+  "...........~~...........",
+  "....#......==.....#.....",
+  "...........~~...........",
+  "...........~~...........",
+  "...........~~...........",
+  ".xxxxxxxxx.~~...........",
+  "...........==.xxxxxxxxx.",
+  "...........~~...........",
+  "...........~~...........",
+  "...........~~...........",
+  ".....#.....==......#....",
+  "...........~~...........",
+  "...........~~..........."
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 1,
+    "to": 3
+   },
+   "exit": {
+    "edge": "E",
+    "from": 10,
+    "to": 12
+   }
+  },
+  {
+   "id": "B",
+   "entrance": {
+    "edge": "W",
+    "from": 10,
+    "to": 12
+   },
+   "exit": {
+    "edge": "E",
+    "from": 1,
+    "to": 3
+   }
+  }
+ ],
+ "lives": 15,
+ "startCash": 320,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "sparkplug",
+   "teaurn"
+  ]
+ },
+ "waves": {
+  "count": [
+   27,
+   32,
+   37
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 8,
+   "g": 1.0683,
+   "airEvery": 7,
+   "eliteFrom": 11,
+   "eliteEvery": 5,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "puttputt",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "brolly",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "sawbones",
+     "from": 4,
+     "weight": 1
+    },
+    {
+     "enemy": "gasbag",
+     "from": 7,
+     "weight": 1
+    },
+    {
+     "enemy": "lummox",
+     "from": 8,
+     "weight": 1
+    },
+    {
+     "enemy": "tubthumper",
+     "from": 2,
+     "weight": 1
+    }
+   ],
+   "hp": 0.64
+  },
+  "overrides": []
+ },
+ "hints": [
+  "Two trains of trouble, crossing the yard to different gates. The canal can only be crossed at the bridges. Only 15 lives here."
+ ]
+}

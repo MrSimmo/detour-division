@@ -1,0 +1,150 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z3-07",
+ "zone": 3,
+ "index": 7,
+ "name": "Whiteout",
+ "mode": "suddenDeath",
+ "seed": 307,
+ "grid": {
+  "cols": 22,
+  "rows": 14
+ },
+ "tiles": [
+  "......................",
+  "......................",
+  "...................#..",
+  "....##................",
+  "......................",
+  "......................",
+  "..........#...........",
+  "...........#..........",
+  "......................",
+  "......................",
+  "................##....",
+  "..#...................",
+  "......................",
+  "......................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 9,
+    "to": 11
+   }
+  },
+  {
+   "id": "B",
+   "entrance": {
+    "edge": "N",
+    "from": 9,
+    "to": 11
+   },
+   "exit": {
+    "edge": "E",
+    "from": 9,
+    "to": 11
+   }
+  }
+ ],
+ "lives": 5,
+ "startCash": 320,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "sparkplug",
+   "icebox"
+  ]
+ },
+ "waves": {
+  "count": [
+   32,
+   37,
+   42
+  ],
+  "interval": 15,
+  "recipe": {
+   "b0": 6.5,
+   "g": 1.045,
+   "airEvery": 6,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "brolly",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 4,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 4,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 7,
+     "weight": 2
+    },
+    {
+     "enemy": "sawbones",
+     "from": 6,
+     "weight": 1
+    }
+   ],
+   "hp": 0.836
+  },
+  "overrides": [
+   {
+    "wave": 1,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 6
+     }
+    ]
+   },
+   {
+    "wave": 2,
+    "groups": [
+     {
+      "enemy": "footling",
+      "count": 8
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "Two roads come in out of the snow. Hold on until the storm blows over, and don't let anything through."
+ ],
+ "modeParams": {
+  "timer": [
+   300,
+   360,
+   420
+  ]
+ }
+}

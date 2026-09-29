@@ -1,0 +1,128 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z3-04",
+ "zone": 3,
+ "index": 4,
+ "name": "Glassy Mere",
+ "mode": "standard",
+ "seed": 304,
+ "grid": {
+  "cols": 24,
+  "rows": 13
+ },
+ "tiles": [
+  "........................",
+  "....................#...",
+  "..#....~~~~~~~~~~.......",
+  ".......~~~~~~~~~~.......",
+  ".......==========.......",
+  ".......~~~~~~~~~~.......",
+  ".......~~~~~~~~~~.......",
+  ".......~~~~~~~~~~.......",
+  ".......==========.......",
+  ".......~~~~~~~~~~.......",
+  ".......~~~~~~~~~~....#..",
+  "...#....................",
+  "........................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 290,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "icebox",
+   "sunbeam"
+  ]
+ },
+ "waves": {
+  "count": [
+   25,
+   30,
+   35
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 7.5,
+   "g": 1.0683,
+   "airEvery": 7,
+   "eliteFrom": 12,
+   "eliteEvery": 6,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "puttputt",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "brolly",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 4,
+     "weight": 2
+    },
+    {
+     "enemy": "lummox",
+     "from": 9,
+     "weight": 1
+    },
+    {
+     "enemy": "sawbones",
+     "from": 3,
+     "weight": 1
+    },
+    {
+     "enemy": "gasbag",
+     "from": 7,
+     "weight": 1
+    }
+   ],
+   "hp": 0.64
+  },
+  "overrides": []
+ },
+ "hints": [
+  "The causeways line everyone up in single file. A Sunbeam's beam burns through the whole queue."
+ ]
+}

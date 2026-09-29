@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dev-dist/
+reports/
+test-results/
+playwright-report/
+.DS_Store
+*.log
+
+# Local only: the session log and the publishing notes (ADR-0015)
+PROGRESS.md
+GITHUB-SETUP.md

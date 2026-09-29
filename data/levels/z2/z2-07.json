@@ -1,0 +1,114 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z2-07",
+ "zone": 2,
+ "index": 7,
+ "name": "The Long Mirage",
+ "mode": "timeTrial",
+ "seed": 207,
+ "grid": {
+  "cols": 26,
+  "rows": 11
+ },
+ "tiles": [
+  "..........................",
+  "..........................",
+  "....##..............##....",
+  "..........................",
+  "..........................",
+  "........#........#........",
+  "..........................",
+  "..........................",
+  "............##............",
+  "..........................",
+  ".........................."
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 4,
+    "to": 6
+   },
+   "exit": {
+    "edge": "E",
+    "from": 4,
+    "to": 6
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 300,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "scorcher",
+   "sparkplug",
+   "piechucker"
+  ]
+ },
+ "waves": {
+  "count": [
+   30,
+   35,
+   40
+  ],
+  "interval": 12,
+  "recipe": {
+   "b0": 8,
+   "g": 1.04,
+   "airEvery": 5,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "puttputt",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "scarper",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "brolly",
+     "from": 4,
+     "weight": 1
+    },
+    {
+     "enemy": "whirligig",
+     "from": 2,
+     "weight": 1
+    }
+   ],
+   "hp": 1.634
+  }
+ },
+ "hints": [
+  "Only knock-outs count, and the clock is running. Kill fast; a maze that's too long costs you time."
+ ],
+ "modeParams": {
+  "timer": [
+   300,
+   300,
+   300
+  ],
+  "target": [
+   180,
+   230,
+   280
+  ]
+ }
+}

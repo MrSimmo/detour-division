@@ -1,0 +1,5 @@
+{
+  "casual": { "hp": 1, "speed": 1, "cash": 1, "bounty": 1, "eliteExtra": 0, "stars": 1, "bossHp": 1 },
+  "tough": { "hp": 1.25, "speed": 1.04, "cash": 0.95, "bounty": 1.0, "eliteExtra": 0.1, "stars": 2, "bossHp": 1 },
+  "heroic": { "hp": 1.45, "speed": 1.08, "cash": 0.9, "bounty": 0.95, "eliteExtra": 0.2, "stars": 3, "bossHp": 1.25 }
+}

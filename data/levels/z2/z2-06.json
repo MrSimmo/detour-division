@@ -1,0 +1,133 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z2-06",
+ "zone": 2,
+ "index": 6,
+ "name": "Custard Oasis",
+ "mode": "standard",
+ "seed": 206,
+ "grid": {
+  "cols": 22,
+  "rows": 13
+ },
+ "tiles": [
+  "......................",
+  "..........##..........",
+  "......................",
+  ".....~~~..........#...",
+  ".....~~~..............",
+  "......~...............",
+  "......................",
+  "...............~......",
+  "..............~~~.....",
+  "..............~~~.....",
+  "......................",
+  "..........##..........",
+  "......................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 280,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "scorcher",
+   "sparkplug",
+   "piechucker"
+  ]
+ },
+ "waves": {
+  "count": [
+   23,
+   28,
+   33
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 7.5,
+   "g": 1.0729,
+   "airEvery": 7,
+   "eliteFrom": 13,
+   "eliteEvery": 7,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "puttputt",
+     "from": 1,
+     "weight": 1
+    },
+    {
+     "enemy": "scarper",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "brolly",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "trio",
+     "from": 4,
+     "weight": 3
+    },
+    {
+     "enemy": "tiddler",
+     "from": 6,
+     "weight": 1
+    },
+    {
+     "enemy": "whirligig",
+     "from": 4,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 6,
+     "weight": 2
+    },
+    {
+     "enemy": "lummox",
+     "from": 10,
+     "weight": 1
+    }
+   ],
+   "hp": 0.64
+  },
+  "overrides": [
+   {
+    "wave": 4,
+    "groups": [
+     {
+      "enemy": "trio",
+      "count": 4
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "Knock over a Trenchcoat Trio and three Tiddlers scatter out. A Pie Chucker splats the lot."
+ ]
+}

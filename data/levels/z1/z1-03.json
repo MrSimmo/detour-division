@@ -1,0 +1,98 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z1-03",
+ "zone": 1,
+ "index": 3,
+ "name": "Skylark Common",
+ "mode": "standard",
+ "seed": 103,
+ "grid": {
+  "cols": 22,
+  "rows": 13
+ },
+ "tiles": [
+  "......................",
+  "......................",
+  "..##.......#..........",
+  "...#...........##.....",
+  "......................",
+  "......................",
+  "......................",
+  "......................",
+  "......................",
+  ".......#..........#...",
+  "..........##..........",
+  "..##..................",
+  "......................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 150,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark"
+  ]
+ },
+ "waves": {
+  "count": [
+   20,
+   25,
+   30
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 5.5,
+   "g": 1.0836,
+   "airEvery": 5,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 4,
+     "weight": 2
+    }
+   ],
+   "hp": 1.954
+  },
+  "overrides": [
+   {
+    "wave": 4,
+    "groups": [
+     {
+      "enemy": "whirligig",
+      "count": 5
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "Whirligigs fly straight over your maze. Skylarks and Rattlers can hit them; nothing else here can."
+ ]
+}

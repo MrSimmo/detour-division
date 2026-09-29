@@ -1,0 +1,168 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z1-08",
+ "zone": 1,
+ "index": 8,
+ "name": "Flattener's Folly",
+ "mode": "standard",
+ "seed": 108,
+ "grid": {
+  "cols": 22,
+  "rows": 13
+ },
+ "tiles": [
+  "......................",
+  "......................",
+  "....##..........##....",
+  "......................",
+  "......................",
+  "..........##..........",
+  "......................",
+  "..........##..........",
+  "......................",
+  "......................",
+  "....##..........##....",
+  "......................",
+  "......................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 220,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper"
+  ]
+ },
+ "waves": {
+  "count": [
+   23,
+   28,
+   33
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 7,
+   "g": 1.0759,
+   "airEvery": 6,
+   "eliteFrom": 12,
+   "eliteEvery": 6,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "lummox",
+     "from": 6,
+     "weight": 1
+    }
+   ],
+   "hp": 1
+  },
+  "overrides": [
+   {
+    "wave": 23,
+    "difficulties": [
+     "casual"
+    ],
+    "groups": [
+     {
+      "enemy": "flattener",
+      "count": 1,
+      "delay": 6
+     },
+     {
+      "enemy": "footling",
+      "count": 12
+     },
+     {
+      "enemy": "tinkettle",
+      "count": 4,
+      "delay": 4
+     }
+    ]
+   },
+   {
+    "wave": 28,
+    "difficulties": [
+     "tough"
+    ],
+    "groups": [
+     {
+      "enemy": "flattener",
+      "count": 1,
+      "delay": 6
+     },
+     {
+      "enemy": "footling",
+      "count": 12
+     },
+     {
+      "enemy": "tinkettle",
+      "count": 4,
+      "delay": 4
+     }
+    ]
+   },
+   {
+    "wave": 33,
+    "difficulties": [
+     "heroic"
+    ],
+    "groups": [
+     {
+      "enemy": "flattener",
+      "count": 1,
+      "delay": 6
+     },
+     {
+      "enemy": "footling",
+      "count": 12
+     },
+     {
+      "enemy": "tinkettle",
+      "count": 4,
+      "delay": 4
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "Old Flattener is slow, armoured and very, very determined. It bursts forward when it's hurt."
+ ]
+}

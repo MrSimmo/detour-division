@@ -1,0 +1,111 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z1-07",
+ "zone": 1,
+ "index": 7,
+ "name": "Millrace Meadow",
+ "mode": "standard",
+ "seed": 107,
+ "grid": {
+  "cols": 22,
+  "rows": 13
+ },
+ "tiles": [
+  "..........~~..........",
+  "..........~~..........",
+  "..........~~..........",
+  "..........==..........",
+  "..........~~..........",
+  "..........~~..........",
+  "..........~~..........",
+  "..........~~..........",
+  "..........~~..........",
+  "..........==..........",
+  "..........~~..........",
+  "..........~~..........",
+  "..........~~.........."
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 5,
+    "to": 7
+   },
+   "exit": {
+    "edge": "E",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 215,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper"
+  ]
+ },
+ "waves": {
+  "count": [
+   23,
+   28,
+   33
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 6.5,
+   "g": 1.0683,
+   "airEvery": 6,
+   "eliteFrom": 13,
+   "eliteEvery": 7,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 1,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 2,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 4,
+     "weight": 2
+    },
+    {
+     "enemy": "lummox",
+     "from": 7,
+     "weight": 1
+    }
+   ],
+   "hp": 1
+  },
+  "overrides": [
+   {
+    "wave": 7,
+    "groups": [
+     {
+      "enemy": "lummox",
+      "count": 2
+     }
+    ]
+   }
+  ]
+ },
+ "hints": [
+  "The river can only be crossed at the bridges. Guard the crossings."
+ ]
+}

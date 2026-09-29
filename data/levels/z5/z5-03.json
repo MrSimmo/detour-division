@@ -1,0 +1,161 @@
+{
+ "$schema": "../../schema/level.schema.json",
+ "id": "z5-03",
+ "zone": 5,
+ "index": 3,
+ "name": "Three Craters",
+ "mode": "standard",
+ "seed": 503,
+ "grid": {
+  "cols": 24,
+  "rows": 15
+ },
+ "tiles": [
+  "........................",
+  "........................",
+  "........................",
+  ".....####.......####....",
+  ".....#~~#.......#~~#....",
+  ".....#~~#.......#~~#....",
+  ".....####.......####....",
+  "........................",
+  "........................",
+  "..........####..........",
+  "..........#~~#..........",
+  "..........#~~#..........",
+  "..........####..........",
+  "........................",
+  "........................"
+ ],
+ "routes": [
+  {
+   "id": "A",
+   "entrance": {
+    "edge": "W",
+    "from": 1,
+    "to": 3
+   },
+   "exit": {
+    "edge": "E",
+    "from": 11,
+    "to": 13
+   }
+  },
+  {
+   "id": "B",
+   "entrance": {
+    "edge": "W",
+    "from": 11,
+    "to": 13
+   },
+   "exit": {
+    "edge": "E",
+    "from": 1,
+    "to": 3
+   }
+  },
+  {
+   "id": "C",
+   "entrance": {
+    "edge": "N",
+    "from": 11,
+    "to": 13
+   },
+   "exit": {
+    "edge": "S",
+    "from": 5,
+    "to": 7
+   }
+  }
+ ],
+ "lives": 20,
+ "startCash": 560,
+ "loadout": {
+  "bot": [
+   "rattler",
+   "treacle",
+   "skylark",
+   "thumper",
+   "sparkplug",
+   "sunbeam"
+  ]
+ },
+ "waves": {
+  "count": [
+   28,
+   33,
+   38
+  ],
+  "interval": 20,
+  "intervalEnd": 14,
+  "recipe": {
+   "b0": 6.5,
+   "g": 1.07,
+   "airEvery": 7,
+   "eliteFrom": 10,
+   "eliteEvery": 5,
+   "pool": [
+    {
+     "enemy": "footling",
+     "from": 1,
+     "weight": 3
+    },
+    {
+     "enemy": "scarper",
+     "from": 2,
+     "weight": 2
+    },
+    {
+     "enemy": "brolly",
+     "from": 3,
+     "weight": 2
+    },
+    {
+     "enemy": "trio",
+     "from": 4,
+     "weight": 2
+    },
+    {
+     "enemy": "whirligig",
+     "from": 3,
+     "weight": 1
+    },
+    {
+     "enemy": "puttputt",
+     "from": 5,
+     "weight": 1
+    },
+    {
+     "enemy": "tinkettle",
+     "from": 5,
+     "weight": 2
+    },
+    {
+     "enemy": "sawbones",
+     "from": 6,
+     "weight": 1
+    },
+    {
+     "enemy": "tubthumper",
+     "from": 6,
+     "weight": 1
+    },
+    {
+     "enemy": "gasbag",
+     "from": 8,
+     "weight": 1
+    },
+    {
+     "enemy": "lummox",
+     "from": 9,
+     "weight": 1
+    }
+   ],
+   "hp": 0.64
+  },
+  "overrides": []
+ },
+ "hints": [
+  "Three roads weave between the craters. Anything you build to lengthen one of them changes the other two."
+ ]
+}

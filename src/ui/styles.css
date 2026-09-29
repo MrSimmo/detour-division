@@ -1,0 +1,1589 @@
+/* Components (DESIGN.md §16.5). Colours come only from tokens.css. */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  inset: 0;
+  overscroll-behavior: none;
+  background: var(--wood-dark);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+}
+
+#stage {
+  position: fixed;
+  inset: 0;
+  touch-action: none;
+}
+
+#stage canvas {
+  display: block;
+  touch-action: none;
+}
+
+#ui {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  font-size: calc(16 * var(--u));
+}
+
+#ui > * {
+  pointer-events: auto;
+}
+
+.icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  flex: none;
+}
+
+/* ------------------------------------------------------------ chunky block buttons */
+
+.btn {
+  --face: var(--brass);
+  --face-hi: var(--brass-light);
+  --face-lo: var(--brass-dark);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(6 * var(--u));
+  /* V-2: at least 44 CSS px however small the HUD scale. */
+  min-width: max(var(--tap), calc(44 * var(--u)));
+  min-height: max(var(--tap), calc(44 * var(--u)));
+  padding: calc(6 * var(--u)) calc(14 * var(--u));
+  margin-bottom: var(--lip);
+  border: var(--line) solid var(--ink);
+  border-radius: calc(12 * var(--u));
+  background: linear-gradient(160deg, var(--face-hi), var(--face) 45%, var(--face) 70%, var(--face-lo));
+  box-shadow:
+    inset calc(2 * var(--u)) calc(2 * var(--u)) 0 var(--hi),
+    0 var(--lip) 0 0 var(--face-lo),
+    0 var(--lip) 0 var(--line) var(--ink);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: calc(20 * var(--u));
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    transform var(--t-press) ease-out,
+    box-shadow var(--t-press) ease-out,
+    filter var(--t-quick);
+}
+
+.btn:hover {
+  filter: brightness(1.07);
+  transform: translateY(calc(-1 * var(--u)));
+}
+
+.btn:active,
+.btn.is-pressed {
+  transform: translateY(var(--lip));
+  box-shadow:
+    inset calc(2 * var(--u)) calc(2 * var(--u)) 0 var(--hi-soft),
+    0 0 0 0 var(--face-lo),
+    0 0 0 var(--line) var(--ink);
+}
+
+.btn:focus-visible {
+  outline: calc(4 * var(--u)) solid var(--brass-light);
+  outline-offset: calc(3 * var(--u));
+}
+
+.btn:disabled,
+.btn[aria-disabled='true'],
+.btn.is-disabled {
+  filter: saturate(0.4) brightness(0.92);
+  cursor: default;
+}
+
+.btn.go {
+  --face: var(--go);
+  --face-hi: var(--go-light);
+  --face-lo: var(--go-dark);
+  color: var(--text-on-dark);
+  text-shadow: 0 calc(2 * var(--u)) 0 var(--ink);
+}
+
+.btn.stop {
+  --face: var(--stop);
+  --face-hi: var(--stop-light);
+  --face-lo: var(--stop-dark);
+  color: var(--text-on-dark);
+  text-shadow: 0 calc(2 * var(--u)) 0 var(--ink);
+}
+
+.btn.quiet {
+  --face: var(--parchment);
+  --face-hi: var(--parchment);
+  --face-lo: var(--parchment-deep);
+}
+
+.btn.round {
+  padding: 0;
+  width: max(var(--tap), calc(48 * var(--u)));
+  height: max(var(--tap), calc(48 * var(--u)));
+  border-radius: 50%;
+}
+
+.btn.is-on {
+  --face: var(--info-light);
+  --face-hi: var(--info-light);
+  --face-lo: var(--info-dark);
+}
+
+/* ------------------------------------------------------------ HUD */
+
+.plate {
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--u));
+  padding: calc(4 * var(--u)) calc(12 * var(--u));
+  border: var(--line) solid var(--ink);
+  border-radius: calc(14 * var(--u));
+  background: linear-gradient(170deg, var(--wood), var(--wood-dark));
+  box-shadow:
+    inset calc(2 * var(--u)) calc(2 * var(--u)) 0 var(--hi-soft),
+    0 calc(4 * var(--u)) 0 0 var(--ink);
+  color: var(--text-on-dark);
+}
+
+.num {
+  font-family: var(--font-display);
+  font-size: calc(24 * var(--u));
+  line-height: 1;
+  color: var(--text-on-dark);
+  -webkit-text-stroke: calc(1.5 * var(--u)) var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 0 calc(2 * var(--u)) 0 var(--ink);
+  font-variant-numeric: tabular-nums;
+  min-width: 2ch;
+}
+
+.num.wobble {
+  animation: wobble 400ms var(--ease-pop);
+}
+
+@keyframes wobble {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.35) rotate(-6deg);
+    color: var(--stop-light);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Reduced motion (§16.6): the OS setting or the in-game one; src/app/settings.ts sets the attribute. */
+:root[data-motion='reduced'] .num.wobble {
+  animation: none;
+}
+
+.small {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: calc(13 * var(--u));
+  color: var(--text-on-dark);
+}
+
+#hud {
+  --hud-h: max(var(--tap), calc(48 * var(--u)));
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: calc(8 * var(--u));
+  pointer-events: none;
+}
+
+#hud > * {
+  pointer-events: auto;
+}
+
+#hud .plate {
+  height: var(--hud-h);
+  margin-bottom: var(--lip);
+  box-shadow:
+    inset calc(2 * var(--u)) calc(2 * var(--u)) 0 var(--hi-soft),
+    0 var(--lip) 0 0 var(--ink),
+    0 var(--lip) 0 var(--line) var(--ink);
+}
+
+#hud .btn {
+  height: var(--hud-h);
+  min-height: 0;
+}
+
+#hud .btn.round {
+  width: var(--hud-h);
+}
+
+.hud-cluster {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(8 * var(--u));
+}
+
+.chips {
+  display: flex;
+  gap: calc(4 * var(--u));
+  align-items: center;
+}
+
+.chip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: calc(2 * var(--u));
+  padding: 0 calc(6 * var(--u)) 0 calc(2 * var(--u));
+  border-radius: calc(10 * var(--u));
+  background: var(--shade-deep);
+  font-size: calc(26 * var(--u));
+}
+
+.chip .count {
+  font-family: var(--font-display);
+  font-size: calc(16 * var(--u));
+  color: var(--text-on-dark);
+  -webkit-text-stroke: calc(1 * var(--u)) var(--ink);
+  paint-order: stroke fill;
+}
+
+.chip .badge {
+  position: absolute;
+  top: calc(-4 * var(--u));
+  left: calc(-4 * var(--u));
+  font-size: calc(14 * var(--u));
+}
+
+.next-wave {
+  display: flex;
+}
+
+/* The countdown sits inside the call-wave button, along its bottom edge (§18.4). */
+.next-wave .btn {
+  padding-bottom: calc(10 * var(--u));
+}
+
+.timer {
+  position: absolute;
+  left: calc(10 * var(--u));
+  right: calc(10 * var(--u));
+  bottom: calc(4 * var(--u));
+  height: calc(6 * var(--u));
+  border: calc(2 * var(--u)) solid var(--ink);
+  border-radius: calc(4 * var(--u));
+  background: var(--shade-deep);
+  overflow: hidden;
+}
+
+.timer > div {
+  height: 100%;
+  background: var(--brass-light);
+  transform-origin: left;
+}
+
+/* ------------------------------------------------------------ build bar */
+
+#buildbar {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(8 * var(--u));
+}
+
+#buildbar.side {
+  flex-direction: column;
+}
+
+.slot {
+  position: relative;
+  width: max(var(--tap), calc(64 * var(--u)));
+  height: max(var(--tap), calc(64 * var(--u)));
+  padding: 0;
+  flex-direction: column;
+  gap: 0;
+  font-size: calc(58 * var(--u));
+  touch-action: none;
+}
+
+.slot .cost {
+  position: absolute;
+  bottom: calc(-6 * var(--u));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: calc(2 * var(--u));
+  padding: 0 calc(5 * var(--u));
+  border: calc(2 * var(--u)) solid var(--ink);
+  border-radius: calc(8 * var(--u));
+  background: var(--wood-dark);
+  font-size: calc(14 * var(--u));
+  color: var(--text-on-dark);
+  white-space: nowrap;
+}
+
+.slot .key {
+  position: absolute;
+  top: calc(2 * var(--u));
+  left: calc(4 * var(--u));
+  font-family: var(--font-ui);
+  font-weight: 700;
+  /* V-8: 11 px at the least on touch devices. */
+  font-size: max(11px, calc(11 * var(--u)));
+  color: var(--ink-soft);
+}
+
+.slot .targets {
+  position: absolute;
+  top: calc(1 * var(--u));
+  right: calc(2 * var(--u));
+  display: flex;
+  font-size: calc(15 * var(--u));
+}
+
+.slot.is-poor .cost {
+  color: var(--stop-light);
+}
+
+.slot.is-selected {
+  --face: var(--info-light);
+  --face-hi: var(--info-light);
+  --face-lo: var(--info-dark);
+}
+
+/* ------------------------------------------------------------ phone rails (§18.2, ADR-0013) */
+
+/* The HUD is a column down the left edge: lives, cash, the wave counter with its chips and call early at
+   the top, and the route, speed and pause buttons in a row at the foot. src/app/layout.ts sizes the column. */
+#hud.rails {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: calc(6 * var(--u));
+}
+
+#hud.rails .hud-cluster {
+  flex-direction: column;
+  align-items: stretch;
+  gap: calc(6 * var(--u));
+}
+
+#hud.rails .hud-cluster:last-child {
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+/* Two lines in the column: the counter, then the next-wave chips (R-HUD-1 exempts this plate's height). */
+#hud.rails .plate.wave {
+  flex-wrap: wrap;
+  row-gap: calc(4 * var(--u));
+  height: auto;
+  min-height: var(--hud-h);
+  padding-block: calc(6 * var(--u));
+}
+
+#hud.rails .plate.wave .chips {
+  flex-basis: 100%;
+  flex-wrap: wrap;
+}
+
+#hud.rails .next-wave .btn {
+  flex: 1;
+}
+
+/* The build bar is a column down the right edge; --slot is as large as the column's height allows. */
+#buildbar.rails {
+  flex-direction: column;
+  gap: calc(4 * var(--u));
+}
+
+#buildbar.rails .slot {
+  width: var(--slot);
+  height: var(--slot);
+  font-size: calc(var(--slot) * 0.9);
+}
+
+/* ------------------------------------------------------------ panels */
+
+.panel {
+  position: absolute;
+  min-width: calc(250 * var(--u));
+  max-width: calc(300 * var(--u));
+  padding: calc(12 * var(--u));
+  border: var(--line) solid var(--ink);
+  border-radius: calc(16 * var(--u));
+  background: var(--parchment);
+  box-shadow:
+    0 0 0 calc(6 * var(--u)) var(--wood),
+    0 0 0 calc(9 * var(--u)) var(--ink),
+    0 calc(10 * var(--u)) 0 calc(9 * var(--u)) var(--shadow);
+  animation: panel-in var(--t-panel) var(--ease-panel);
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(calc(8 * var(--u))) scale(0.96);
+  }
+}
+
+/* Reduced motion (§16.6): the OS setting or the in-game one; src/app/settings.ts sets the attribute. */
+:root[data-motion='reduced'] .panel {
+  animation: fade-in 150ms ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.panel h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: calc(24 * var(--u));
+  line-height: 1.1;
+}
+
+.panel .head {
+  display: flex;
+  align-items: center;
+  gap: calc(10 * var(--u));
+  margin-bottom: calc(8 * var(--u));
+}
+
+.panel .head .portrait {
+  font-size: calc(52 * var(--u));
+}
+
+.panel .close {
+  margin-left: auto;
+  align-self: flex-start;
+  width: max(var(--tap), calc(40 * var(--u)));
+  height: max(var(--tap), calc(40 * var(--u)));
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  font-size: calc(22 * var(--u));
+}
+
+.pips {
+  display: flex;
+  gap: calc(4 * var(--u));
+  margin-top: calc(4 * var(--u));
+}
+
+.pips span {
+  width: calc(12 * var(--u));
+  height: calc(12 * var(--u));
+  border: calc(2 * var(--u)) solid var(--ink-soft);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.pips span.on {
+  border-color: var(--ink);
+  background: var(--brass);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: calc(2 * var(--u)) calc(10 * var(--u));
+  margin: 0 0 calc(10 * var(--u));
+  font-size: calc(15 * var(--u));
+}
+
+.stats dt {
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.stats dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.stats .delta {
+  color: var(--go-dark);
+}
+
+.actions {
+  display: flex;
+  gap: calc(10 * var(--u));
+  margin-top: calc(6 * var(--u));
+}
+
+.actions .btn {
+  flex: 1;
+  flex-direction: column;
+  gap: calc(2 * var(--u));
+  font-size: calc(18 * var(--u));
+}
+
+.actions .btn .sub {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: calc(13 * var(--u));
+  text-shadow: none;
+}
+
+.segmented {
+  display: grid;
+  /* Two by two: "Strongest" doesn't fit a row of four on narrow panels, and 3 + 1 looks broken. */
+  grid-template-columns: repeat(2, 1fr);
+  gap: calc(4 * var(--u));
+  margin-top: calc(6 * var(--u));
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: max(11px, calc(12 * var(--u)));
+}
+
+.segmented .btn {
+  min-width: 0;
+  padding: calc(4 * var(--u)) 0;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: max(11px, calc(12 * var(--u)));
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.label {
+  font-weight: 700;
+  font-size: calc(13 * var(--u));
+  color: var(--ink-soft);
+}
+
+/* ------------------------------------------------------------ bubble, overlays */
+
+.bubble {
+  position: absolute;
+  padding: calc(6 * var(--u)) calc(12 * var(--u));
+  border: var(--line) solid var(--ink);
+  border-radius: calc(14 * var(--u));
+  background: var(--parchment);
+  font-weight: 700;
+  font-size: calc(15 * var(--u));
+  white-space: nowrap;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  box-shadow: 0 calc(4 * var(--u)) 0 var(--shadow);
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: calc(-10 * var(--u));
+  border: calc(8 * var(--u)) solid transparent;
+  border-top-color: var(--ink);
+  transform: translateX(-50%);
+}
+
+.bubble.bad {
+  background: var(--stop-light);
+}
+
+/* Dialogs centre in the safe area; src/app/fit.ts sets the --safe-* insets. */
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--safe-t, 0px) var(--safe-r, 0px) var(--safe-b, 0px) var(--safe-l, 0px);
+  background: var(--shade-deep);
+  z-index: 10;
+}
+
+/* §18.2 item 7: src/app/fit.ts sets --fit below 1 on a dialog that wouldn't fit the window. */
+.card {
+  --u: calc(var(--ui-scale) * var(--fit, 1) * 1px);
+  --lip: calc(5 * var(--u));
+  --line: calc(3 * var(--u));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(12 * var(--u));
+  max-width: min(90vw, calc(520 * var(--u)));
+  padding: calc(24 * var(--u)) calc(32 * var(--u));
+  border: var(--line) solid var(--ink);
+  border-radius: calc(20 * var(--u));
+  background: var(--parchment);
+  box-shadow:
+    0 0 0 calc(8 * var(--u)) var(--wood),
+    0 0 0 calc(11 * var(--u)) var(--ink),
+    0 calc(14 * var(--u)) 0 calc(11 * var(--u)) var(--shadow);
+  text-align: center;
+  animation: panel-in var(--t-pop) var(--ease-pop);
+}
+
+.card h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: calc(48 * var(--u));
+  line-height: 1;
+}
+
+/* ------------------------------------------------------------ settings (§18.3 screen 8) */
+
+/* Opaque, so the screen it opens over (title or pause) doesn't show round the card. */
+.overlay.opaque {
+  background: var(--wood-dark);
+}
+
+
+.card h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: calc(24 * var(--u));
+  color: var(--ink-soft);
+}
+
+.settings {
+  display: grid;
+  gap: calc(10 * var(--u));
+  width: min(80vw, calc(380 * var(--u)));
+}
+
+.setting {
+  display: grid;
+  grid-template-columns: minmax(calc(110 * var(--u)), 1fr) auto;
+  align-items: center;
+  gap: calc(10 * var(--u));
+  min-height: max(var(--tap), calc(44 * var(--u)));
+  text-align: left;
+}
+
+.setting.slider {
+  grid-template-columns: calc(84 * var(--u)) 1fr calc(48 * var(--u));
+}
+
+.tabs.choice {
+  display: flex;
+  gap: calc(4 * var(--u));
+  margin: 0;
+}
+
+.tabs.choice .btn,
+.setting .btn.key {
+  min-width: max(var(--tap), calc(52 * var(--u)));
+  padding: calc(4 * var(--u)) calc(10 * var(--u));
+  font-size: calc(14 * var(--u));
+}
+
+/* An option that's off still takes presses (for its tooltip, R-GPU-1), but doesn't lift or sink. */
+.tabs.choice .btn[aria-disabled='true']:is(:hover, :active) {
+  transform: none;
+  box-shadow:
+    inset calc(2 * var(--u)) calc(2 * var(--u)) 0 var(--hi),
+    0 var(--lip) 0 0 var(--face-lo),
+    0 var(--lip) 0 var(--line) var(--ink);
+}
+
+.setting .value {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.setting input[type='range'] {
+  width: 100%;
+  height: max(var(--tap), calc(44 * var(--u)));
+  margin: 0;
+  background: transparent;
+  accent-color: var(--go);
+  cursor: pointer;
+  appearance: none;
+}
+
+.setting input[type='range']::-webkit-slider-runnable-track {
+  height: calc(12 * var(--u));
+  border: var(--line) solid var(--ink);
+  border-radius: calc(8 * var(--u));
+  background: var(--parchment-shade);
+}
+
+.setting input[type='range']::-moz-range-track {
+  height: calc(12 * var(--u));
+  border: var(--line) solid var(--ink);
+  border-radius: calc(8 * var(--u));
+  background: var(--parchment-shade);
+}
+
+.setting input[type='range']::-webkit-slider-thumb {
+  width: calc(28 * var(--u));
+  height: calc(28 * var(--u));
+  margin-top: calc(-11 * var(--u));
+  border: var(--line) solid var(--ink);
+  border-radius: 50%;
+  background: var(--brass);
+  box-shadow: 0 calc(3 * var(--u)) 0 var(--brass-dark);
+  appearance: none;
+}
+
+.setting input[type='range']::-moz-range-thumb {
+  width: calc(28 * var(--u));
+  height: calc(28 * var(--u));
+  border: var(--line) solid var(--ink);
+  border-radius: 50%;
+  background: var(--brass);
+  box-shadow: 0 calc(3 * var(--u)) 0 var(--brass-dark);
+}
+
+.setting input[type='range']:focus-visible {
+  outline: var(--line) solid var(--info);
+  outline-offset: calc(2 * var(--u));
+}
+
+/* Key bindings always sit in two columns: fifteen rows in one would push Done off the screen. */
+.settings.keys {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: calc(24 * var(--u));
+  row-gap: calc(4 * var(--u));
+  width: min(88vw, calc(560 * var(--u)));
+}
+
+.settings-screen:has(.settings.keys) .card {
+  max-width: min(94vw, calc(620 * var(--u)));
+}
+
+.settings.keys .setting.reset {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.saves-cols,
+.saves-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(12 * var(--u));
+}
+
+.save-code {
+  width: min(80vw, calc(420 * var(--u)));
+  padding: calc(8 * var(--u));
+  border: var(--line) solid var(--ink);
+  border-radius: calc(10 * var(--u));
+  background: var(--text-on-dark);
+  color: var(--ink);
+  font: 600 calc(13 * var(--u)) / 1.3 var(--font-ui);
+  word-break: break-all;
+  resize: none;
+}
+
+.save-code:focus-visible {
+  outline: var(--line) solid var(--info);
+  outline-offset: calc(2 * var(--u));
+}
+
+.steps {
+  margin: 0;
+  padding-left: calc(22 * var(--u));
+  text-align: left;
+  line-height: 1.5;
+}
+
+.update-badge {
+  position: fixed;
+  top: max(8px, env(safe-area-inset-top));
+  right: max(8px, env(safe-area-inset-right));
+  z-index: 20;
+  display: grid;
+  gap: calc(2 * var(--u));
+  max-width: calc(240 * var(--u));
+  padding: calc(8 * var(--u)) calc(12 * var(--u));
+  border: var(--line) solid var(--ink);
+  border-radius: calc(12 * var(--u));
+  background: var(--brass-light);
+  box-shadow: 0 calc(4 * var(--u)) 0 var(--shadow);
+  color: var(--ink);
+  font-size: calc(13 * var(--u));
+  line-height: 1.25;
+  pointer-events: none;
+}
+
+/* §16.1 juice: the boss's entrance banner, and the white flag of a retreat. */
+.boss-banner {
+  position: fixed;
+  top: calc(64 * var(--u));
+  left: 50%;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--u));
+  padding: calc(8 * var(--u)) calc(18 * var(--u));
+  border: var(--line) solid var(--ink);
+  border-radius: calc(14 * var(--u));
+  background: var(--stop);
+  box-shadow: 0 calc(5 * var(--u)) 0 var(--stop-dark), 0 calc(8 * var(--u)) calc(12 * var(--u)) var(--shadow);
+  color: var(--text-on-dark);
+  font: 400 calc(26 * var(--u)) / 1 var(--font-display);
+  text-shadow: 0 calc(2 * var(--u)) 0 var(--ink);
+  transform: translateX(-50%);
+  pointer-events: none;
+  animation: banner-in var(--t-pop) var(--ease-pop) both, banner-out 400ms ease-in 2400ms forwards;
+}
+
+@keyframes banner-in {
+  from {
+    transform: translate(-50%, calc(-40 * var(--u))) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes banner-out {
+  to {
+    opacity: 0;
+  }
+}
+
+:root[data-motion='reduced'] .boss-banner {
+  animation: fade-in 150ms ease-out both, banner-out 400ms ease-in 2400ms forwards;
+}
+
+.white-flag {
+  line-height: 0;
+  transform-origin: 20% 90%;
+  animation: flag-wave 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes flag-wave {
+  from {
+    transform: rotate(-4deg);
+  }
+  to {
+    transform: rotate(3deg);
+  }
+}
+
+:root[data-motion='reduced'] .white-flag {
+  animation: none;
+}
+
+.card .notice {
+  padding: calc(8 * var(--u)) calc(12 * var(--u));
+  border: var(--line) solid var(--ink);
+  border-radius: calc(10 * var(--u));
+  background: var(--parchment-shade);
+  font-weight: 600;
+}
+
+.card p {
+  margin: 0;
+  max-width: 34ch;
+  font-size: calc(17 * var(--u));
+  line-height: 1.4;
+}
+
+.card .row {
+  display: flex;
+  gap: calc(12 * var(--u));
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stars {
+  display: flex;
+  gap: calc(6 * var(--u));
+  font-size: calc(48 * var(--u));
+}
+
+.title-text,
+.title-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(12 * var(--u));
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: calc(72 * var(--u));
+  line-height: 0.9;
+  color: var(--brass-light);
+  -webkit-text-stroke: calc(4 * var(--u)) var(--ink);
+  paint-order: stroke fill;
+  text-shadow:
+    0 calc(6 * var(--u)) 0 var(--ink),
+    0 calc(10 * var(--u)) 0 var(--shadow);
+}
+
+#rotate {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background: var(--wood-dark);
+  z-index: 20;
+  color: var(--text-on-dark);
+  font-family: var(--font-display);
+  font-size: 22px;
+  text-align: center;
+  padding: 24px;
+}
+
+@media (orientation: portrait) and (pointer: coarse) and (max-width: 500px) {
+  #rotate {
+    display: grid;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.panel .blurb {
+  margin: 0 0 calc(6 * var(--u));
+}
+
+/* Phones (§18.4): docked beside the map in two columns, the stats beside the actions and targeting, so it
+   fits a landscape phone's height. The one-line description is left to the build bar's tooltip. */
+.panel.docked {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  column-gap: calc(12 * var(--u));
+  align-items: start;
+  width: calc(400 * var(--u));
+  max-width: none;
+}
+
+.panel.docked > * {
+  grid-column: 2;
+}
+
+.panel.docked > .head {
+  grid-column: 1 / -1;
+}
+
+.panel.docked > .blurb {
+  display: none;
+}
+
+.panel.docked > .stats {
+  grid-column: 1;
+  grid-row: 2 / span 3;
+  column-gap: calc(8 * var(--u));
+}
+
+/* In the narrow column a label may wrap, but a value ("70 → 110") stays on one line. */
+.panel.docked .stats dd {
+  white-space: nowrap;
+}
+
+.panel.docked .actions {
+  margin-top: 0;
+}
+
+.panel.docked .actions .btn {
+  padding-inline: calc(6 * var(--u));
+}
+
+.panel .seg-label {
+  margin-top: calc(8 * var(--u));
+}
+
+/* ------------------------------------------------------------ menus */
+
+.btn.big {
+  font-size: calc(26 * var(--u));
+  padding: calc(10 * var(--u)) calc(26 * var(--u));
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: calc(10 * var(--u));
+  min-width: calc(240 * var(--u));
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: calc(12 * var(--u));
+  width: 100%;
+}
+
+.card-head h1 {
+  flex: 1;
+  text-align: left;
+  font-size: calc(36 * var(--u));
+}
+
+.star-row {
+  display: inline-flex;
+  gap: calc(1 * var(--u));
+  font-size: calc(14 * var(--u));
+}
+
+.mini-stars {
+  display: inline-flex;
+  font-size: calc(13 * var(--u));
+}
+
+/* Stated as #ui > .map-screen to outrank `#ui > * { pointer-events: auto }`: this full-window layer must let
+   presses through to the map canvas, which pans and zooms it (found at the v1.2 phone review). */
+#ui > .map-screen {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.map-screen > * {
+  pointer-events: auto;
+}
+
+/* §18.2 item 8: the app sets --map-u so the medallions scale with the drawn map. */
+.map-nodes {
+  --u: var(--map-u, calc(var(--ui-scale) * 1px));
+  --lip: calc(5 * var(--u));
+  --line: calc(3 * var(--u));
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.node {
+  position: absolute;
+  transform: translate(-50%, -60%);
+  width: max(var(--tap), calc(46 * var(--u)));
+  height: max(var(--tap), calc(46 * var(--u)));
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border-radius: 50%;
+  flex-direction: column;
+  gap: 0;
+  pointer-events: auto;
+  font-size: calc(22 * var(--u));
+}
+
+/* V-7: .btn:hover and :active set transform, which would replace the centring above and make the
+   medallion jump; restate the centring with the lift or the press added to it. */
+.node:hover {
+  transform: translate(-50%, calc(-60% - 1 * var(--u)));
+}
+
+.node:active,
+.node.is-pressed {
+  transform: translate(-50%, calc(-60% + var(--lip)));
+}
+
+.node.boss {
+  width: max(calc(var(--tap) * 1.18), calc(56 * var(--u)));
+  height: max(calc(var(--tap) * 1.18), calc(56 * var(--u)));
+  --face: var(--stop);
+  --face-hi: var(--stop-light);
+  --face-lo: var(--stop-dark);
+  color: var(--text-on-dark);
+}
+
+.node .num {
+  font-size: calc(20 * var(--u));
+  min-width: 0;
+}
+
+.node .star-row {
+  position: absolute;
+  bottom: calc(-16 * var(--u));
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: calc(15 * var(--u));
+  filter: drop-shadow(0 calc(1 * var(--u)) 0 var(--ink));
+}
+
+.node .badge {
+  position: absolute;
+  top: calc(-10 * var(--u));
+  right: calc(-10 * var(--u));
+  font-size: calc(20 * var(--u));
+}
+
+.node.locked {
+  --face: var(--parchment-deep);
+  --face-hi: var(--parchment-shade);
+  --face-lo: var(--wood);
+  filter: saturate(0.5);
+}
+
+.node .lock {
+  font-size: calc(22 * var(--u));
+}
+
+.zone-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--u));
+  padding: calc(3 * var(--u)) calc(12 * var(--u));
+  border: var(--line) solid var(--ink);
+  border-radius: calc(12 * var(--u));
+  background: var(--parchment);
+  font-family: var(--font-display);
+  font-size: calc(17 * var(--u));
+  white-space: nowrap;
+  box-shadow: 0 calc(3 * var(--u)) 0 var(--ink);
+  pointer-events: none;
+}
+
+.zone-label.shut {
+  background: var(--parchment-deep);
+}
+
+.zone-label .need {
+  display: inline-flex;
+  align-items: center;
+  font-size: calc(15 * var(--u));
+}
+
+/* Inside the safe area (§18.2 item 8); src/app/fit.ts sets the --safe-* insets. */
+.map-bar {
+  position: absolute;
+  top: calc(var(--safe-t, 0px) + 10 * var(--u));
+  left: calc(var(--safe-l, 0px) + 12 * var(--u));
+  right: calc(var(--safe-r, 0px) + 12 * var(--u));
+  display: flex;
+  align-items: center;
+  gap: calc(10 * var(--u));
+}
+
+.map-bar .plate {
+  margin-right: auto;
+}
+
+.tabs {
+  display: flex;
+  gap: calc(6 * var(--u));
+  justify-content: center;
+}
+
+.tabs .btn {
+  flex-direction: column;
+  gap: calc(2 * var(--u));
+  font-size: calc(17 * var(--u));
+}
+
+.briefing {
+  max-width: min(94vw, calc(600 * var(--u)));
+}
+
+.briefing .hint {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.loadout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(8 * var(--u));
+  justify-content: center;
+}
+
+.slot.pick.is-on {
+  --face: var(--go-light);
+  --face-hi: var(--go-light);
+  --face-lo: var(--go-dark);
+}
+
+.result .stamp {
+  animation: stamp 520ms var(--ease-pop) both;
+}
+
+@keyframes stamp {
+  from {
+    transform: scale(2.2) rotate(-12deg);
+    opacity: 0;
+  }
+}
+
+/* Reduced motion (§16.6): the OS setting or the in-game one; src/app/settings.ts sets the attribute. */
+:root[data-motion='reduced'] .result .stamp {
+  animation: fade-in 150ms ease-out both;
+}
+
+.result .stats {
+  font-size: calc(17 * var(--u));
+}
+
+.unlocks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(12 * var(--u));
+}
+
+.unlock {
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--u));
+  font-family: var(--font-display);
+  font-size: calc(20 * var(--u));
+}
+
+.unlock .icon {
+  font-size: calc(40 * var(--u));
+}
+
+/* max-width too: the generic .card cap (520 units) left room for three entries a row, twelve rows of
+   enemies, and a guide shrunk to half size to fit a 1366×768 window (found at the v1.2 phone review). */
+.guide-card {
+  width: min(94vw, calc(760 * var(--u)));
+  max-width: min(94vw, calc(760 * var(--u)));
+  align-items: stretch;
+}
+
+.guide-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(14 * var(--u));
+}
+
+/* A fixed number of columns: shrinking the card to fit must never reflow the entries into a taller
+   grid, which made the fit shrink it again (§18.2 item 7, found at the v1.2 phone review). */
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(5, max-content);
+  gap: calc(6 * var(--u));
+  align-content: start;
+}
+
+.entry {
+  width: max(var(--tap), calc(58 * var(--u)));
+  height: max(var(--tap), calc(58 * var(--u)));
+  min-width: 0;
+  padding: 0;
+  font-size: calc(46 * var(--u));
+}
+
+.entry.unknown .icon {
+  filter: brightness(0) opacity(0.35);
+}
+
+.guide-detail {
+  text-align: left;
+}
+
+.guide-detail .portrait {
+  font-size: calc(90 * var(--u));
+}
+
+.guide-detail h2 {
+  margin: calc(4 * var(--u)) 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: calc(26 * var(--u));
+}
+
+.guide-detail .flavour {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.brief-cols {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(10 * var(--u));
+}
+
+.brief-a,
+.brief-b {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(10 * var(--u));
+}
+
+.clock {
+  min-width: 3ch;
+}
+
+.clock:empty {
+  display: none;
+}
+
+.clear-prompt {
+  min-width: calc(220 * var(--u));
+  transform: translate(-50%, -100%);
+}
+
+/* ------------------------------------------------------------ tooltips (§18.6) */
+
+.tooltip {
+  position: fixed;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: calc(2 * var(--u));
+  max-width: min(80vw, calc(260 * var(--u)));
+  padding: calc(6 * var(--u)) calc(10 * var(--u));
+  border: max(2px, calc(2 * var(--u))) solid var(--ink);
+  border-radius: calc(10 * var(--u));
+  background: var(--parchment);
+  box-shadow: 0 calc(4 * var(--u)) 0 var(--shadow);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: max(12px, calc(14 * var(--u)));
+  line-height: 1.3;
+  text-align: left;
+  pointer-events: none;
+  animation: fade-in var(--t-quick) ease-out;
+}
+
+.tooltip[hidden] {
+  display: none;
+}
+
+.tooltip b {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: max(15px, calc(18 * var(--u)));
+}
+
+.tooltip small {
+  font-size: max(11px, calc(12 * var(--u)));
+  color: var(--ink-soft);
+}
+
+/* ------------------------------------------------------------ short landscape screens (§18.2 item 7) */
+
+/* §16.4: at its legibility floor and still too tall for a touch screen, a dialog scrolls rather than
+   shrinking its text (src/app/fit.ts sets the class and the height). */
+.card.scrolls {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+}
+
+/* Landscape phones, and desktop windows no taller than 500 px. Dialogs go side by side, with the title,
+   any tabs and Done or Close in one header row, so they fit at the legibility floor without scrolling.
+   --avail-w is the safe viewport's width less the dialog margins (src/app/fit.ts). */
+@media (orientation: landscape) and (max-height: 500px) {
+  .card,
+  .settings-screen:has(.settings.keys) .card {
+    max-width: min(96vw, var(--avail-w, 96vw));
+    padding: calc(10 * var(--u)) calc(18 * var(--u));
+    gap: calc(6 * var(--u));
+  }
+
+  .card h1 {
+    font-size: calc(32 * var(--u));
+  }
+
+  /* Header row: the title on the left, any tabs in the middle, Done or Close on the right. */
+  .settings-card,
+  .guide-card,
+  .card.saves {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: calc(16 * var(--u));
+  }
+
+  .settings-card > *,
+  .guide-card > *,
+  .card.saves > * {
+    grid-column: 1 / -1;
+  }
+
+  .guide-card .card-head {
+    display: contents;
+  }
+
+  .settings-card > h1,
+  .guide-card h1,
+  .card.saves > h1 {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: left;
+  }
+
+  .settings-card > .tabs,
+  .guide-card > .tabs {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .settings-card > .btn.go,
+  .guide-card .card-head .btn,
+  .card.saves > .btn.go {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  /* Settings: sliders and choices two by two, key bindings four across. */
+  .settings {
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(24 * var(--u));
+    row-gap: calc(6 * var(--u));
+    width: max-content;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  /* Tighter choices, so a three-way one (Renderer) stays inside its column. */
+  .tabs.choice .btn {
+    padding: calc(4 * var(--u)) calc(6 * var(--u));
+  }
+
+  /* Fifteen rows of 44 px keys can't fit a phone's height; long labels wrap instead (R-LAYOUT-3). */
+  .settings.keys {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: calc(14 * var(--u));
+    row-gap: calc(2 * var(--u));
+    width: 100%;
+  }
+
+  .settings.keys .setting {
+    grid-template-columns: minmax(0, 1fr) auto;
+    line-height: 1.2;
+  }
+
+  /* Title: the name and the blurb on the left, the buttons on the right, two by two. */
+  .title-screen:not(.splash) .card {
+    flex-direction: row;
+    align-items: center;
+    gap: calc(20 * var(--u));
+  }
+
+  .title-screen:not(.splash) .title-text {
+    flex: 1 1 0;
+  }
+
+  .title-screen:not(.splash) .title-actions {
+    align-items: stretch;
+  }
+
+  .title-screen:not(.splash) .title-actions .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Saves: export on the left, import on the right. */
+  .saves-cols {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: calc(20 * var(--u));
+  }
+
+  .saves-col {
+    flex: 1 1 0;
+  }
+
+  .card.saves .save-code {
+    width: 100%;
+  }
+
+  /* Field guide: the entries in four rows, read down each column (an enemy above its elite), with the
+     chosen entry beside them. */
+  .guide-body {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .guide-grid {
+    grid-auto-flow: column;
+    grid-template-rows: repeat(4, max-content);
+    grid-template-columns: none;
+    grid-auto-columns: max-content;
+    gap: calc(3 * var(--u));
+  }
+
+  .entry {
+    width: max(var(--tap), calc(48 * var(--u)));
+    height: max(var(--tap), calc(48 * var(--u)));
+    font-size: calc(38 * var(--u));
+  }
+
+  .guide-detail .portrait {
+    float: left;
+    margin-right: calc(10 * var(--u));
+    font-size: calc(56 * var(--u));
+  }
+
+  .guide-detail .stats {
+    clear: both;
+  }
+
+  /* Briefing: side by side, with smaller loadout slots so twelve towers fit in two rows. */
+  .brief-cols {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .brief-a {
+    flex: 1 1 0;
+  }
+
+  .brief-b {
+    flex: 1.3 1 0;
+  }
+
+  .briefing .loadout {
+    gap: calc(6 * var(--u));
+  }
+
+  .briefing .slot {
+    width: max(var(--tap), calc(48 * var(--u)));
+    height: max(var(--tap), calc(48 * var(--u)));
+    font-size: calc(44 * var(--u));
+  }
+
+  /* Pause: the four buttons two by two. */
+  .col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Result: new towers side by side. */
+  .unlocks {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: calc(16 * var(--u));
+  }
+
+  /* Add to Home Screen: the steps and the reason side by side. */
+  .card.explainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(20 * var(--u));
+    text-align: left;
+  }
+
+  .card.explainer > h1,
+  .card.explainer > .btn {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
